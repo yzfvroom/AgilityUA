@@ -13,11 +13,11 @@ Welcome to the |classbold| lab at F5 Agility |year|
    :numbered:
    :caption: Contents:
    :glob:
-   
+
    intro*
+   module1*
    lab1*
    lab2*
    lab3*
    lab4*
    close*
-   

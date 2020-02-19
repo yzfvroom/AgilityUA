@@ -1,10 +1,17 @@
 Lab 1: SAML Service Provider (SP) Lab
 ======================================
 
-The purpose of this lab is to configure and test a SAML Service
-Provider (SP). Students will configure the various aspects of a SAML Service
-Provider, import and bind to a SAML Identity Provider (IdP) and test
-SP-Initiated SAML Federation.
+The purpose of this lab is to configure and test a SAML Service Provider. It is assumed students have
+a basic understanding of SAML (Security Assertion Markup Language) which defines an XML framework for
+creating, requesting, and exchanging authentication and authorization data among entities known as
+Identity Providers (IdPs) and Service Providers (SPs). The Lab environment will have a pre-configured IdP
+along with a Virtual Server and Access Policy. Student tasks  consist of configuring various aspects of a
+SAML Service Provider, importing and binding to a SAML Identity Provider and testing SP Initiated SAML Federation.
+
+When you use APM as a SAML service provider, APM consumes SAML assertions (claims) and validates their
+trustworthiness. After successfully verifying the assertion, APM creates session variables from the
+assertion contents. An Access Policy can use session variables to finely control access to resources and to
+determine which ACLs to assign.
 
 Objective:
 ----------
@@ -14,17 +21,19 @@ Objective:
 
 -  Gain an understanding of the access flow for SP-Initiated SAML
 
+-  Gain a basic understanding of Client-Side Authentication
+
 Lab Requirements:
 -----------------
 
 -  All Lab requirements will be noted in the tasks that follow
 
--  Estimated completion time: 25 minutes
+-  Estimated completion time: 20 minutes
 
 Lab 1 Tasks:
 -----------------
 
-TASK 1: Configure the SAML Service Provider (SP) 
+TASK 1: Configure the SAML Service Provider (SP)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the instructions and screen shots below:
@@ -44,9 +53,9 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 4. In the **Create New SAML SP Service**  dialogue box click **General Settings** in         |
 |                                                                                              |
-|    the left navigation pane and key in the following as shown:                               | 
+|    the left navigation pane and key in the following as shown:                               |
 |                                                                                              |
-|    -  **Name**: **app.f5demo.com**                                                           | 
+|    -  **Name**: **app.f5demo.com**                                                           |
 |                                                                                              |
 |    -  **Entity ID**: **https://app.f5demo.com**                                              |
 |                                                                                              |
@@ -71,15 +80,15 @@ Refer to the instructions and screen shots below:
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK 2: Configure the External SAML IdP Connector 
+TASK 2: Configure the External SAML IdP Connector
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
 | 1. Click on the **Access** -> **Federation** -> **SAML Service Provider** ->                 |
-|                                                                                              |  
-|    **External IdP Connectors** or click on the **SAML Service Provider** tab in the          | 
+|                                                                                              |
+|    **External IdP Connectors** or click on the **SAML Service Provider** tab in the          |
 |                                                                                              |
 |    horizontal navigation menu andselect **External IdP Connectors**.                         |
 |                                                                                              |
@@ -90,25 +99,25 @@ Refer to the instructions and screen shots below:
 | |image004|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-+----------------------------------------------------------------------------------------------+   
++----------------------------------------------------------------------------------------------+
 | 4. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
 |                                                                                              |
 |    the **idp.partner.com-app\_metadata.xml** file from the Desktop of your jump host.        |
 |                                                                                              |
-| 5. In the **Identity Provider Name** field enter the following: **idp.partner.com**          | 
+| 5. In the **Identity Provider Name** field enter the following: **idp.partner.com**          |
 |                                                                                              |
 | 6. Click **OK** on the dialogue box.                                                         |
 |                                                                                              |
 | *Note: The idp.partner.com-app\_metadata.xml was created previously. Oftentimes, iDP*        |
 |                                                                                              |
-| *providers will have a metadata file representing their IdP service. This can be*            | 
+| *providers will have a metadata file representing their IdP service. This can be*            |
 |                                                                                              |
 | *imported to save object creation time as it has been done in this lab*                      |
 +----------------------------------------------------------------------------------------------+
 | |image005|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-TASK: 3: Bind the External SAML IdP Connector to the SAML SP 
+TASK: 3: Bind the External SAML IdP Connector to the SAML SP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the instructions and screen shots below:
@@ -120,7 +129,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 2. Click the **Checkbox** next to the previously created **app.f5demo.com** and select       |
 |                                                                                              |
-|    **Bind/Unbind IdP Connectors** button at the bottom of the GUI.                           | 
+|    **Bind/Unbind IdP Connectors** button at the bottom of the GUI.                           |
 +----------------------------------------------------------------------------------------------+
 | |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -148,7 +157,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
- 
+
 TASK 4: Configure the SAML SP Access Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -180,7 +189,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | |image010|                                                                                   |
 +----------------------------------------------------------------------------------------------+
- 
+
 +----------------------------------------------------------------------------------------------+
 | 6. From the **Access** -> **Profiles/Policies** -> **Access Profiles**                       |
 |    **(Per-Session Policies)**,                                                               |
@@ -196,20 +205,20 @@ Refer to the instructions and screen shots below:
 |    the **Plus (+) Sign** between **Start** and **Deny**.                                     |
 |                                                                                              |
 | 8. In the pop-up dialogue box select the **Authentication** tab and then click the **Radio** |
-|                                                                                              | 
+|                                                                                              |
 |    **Button** next to **SAML Auth**. Once selected click the **Add Item** button.            |
 +----------------------------------------------------------------------------------------------+
 | |image012|                                                                                   |
 |                                                                                              |
 | |image013|                                                                                   |
 +----------------------------------------------------------------------------------------------+
-  
+
 +----------------------------------------------------------------------------------------------+
 | 9. In the **SAML Auth** configuration window, select **/Common/app.f5demo.com** from the     |
 |                                                                                              |
 |    **SAML Authentication**, **AAA Server** drop down menu.                                   |
-|                                                                                              | 
-| 10. Click the **Save** button at the bottom of the configuration window.                     |  
+|                                                                                              |
+| 10. Click the **Save** button at the bottom of the configuration window.                     |
 +----------------------------------------------------------------------------------------------+
 | |image014|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -248,7 +257,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 1. Begin by selecting: **Local Traffic** -> **Virtual Servers**                              |
 |                                                                                              |
-| 2. Click the **Create** button (far right)                                                   |   
+| 2. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image017|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -286,7 +295,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | |image018|                                                                                   |
 |                                                                                              |
-| |image019|                                                                                   | 
+| |image019|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 TASK 6: Test the SAML SP
@@ -324,66 +333,66 @@ Refer to the instructions and screen shots below:
 | |image021|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-.. |image001| image:: media/image001.png
+.. |image001| image:: /docs/_static/class1/Lab1/image001.png
    :width: 4.5in
    :height: 0.74in
-.. |image002| image:: media/image002.png
+.. |image002| image:: /docs/_static/class1/Lab1/image002.png
    :width: 4.5in
    :height: 3.37in
-.. |image003| image:: media/image003.png
+.. |image003| image:: /docs/_static/class1/Lab1/image003.png
    :width: 4.5in
    :height: 3.38in
-.. |image004| image:: media/image004.png
+.. |image004| image:: /docs/_static/class1/Lab1/image004.png
    :width: 4.5in
    :height: 0.73in
-.. |image005| image:: media/image005.png
+.. |image005| image:: /docs/_static/class1/Lab1/image005.png
    :width: 4.5in
    :height: 3.37in
-.. |image006| image:: media/image006.png
+.. |image006| image:: /docs/_static/class1/Lab1/image006.png
    :width: 4.5in
    :height: 1.15in
-.. |image007| image:: media/image007.png
+.. |image007| image:: /docs/_static/class1/Lab1/image007.png
    :width: 4.5in
    :height: 2.28in
-.. |image008| image:: media/image008.png
+.. |image008| image:: /docs/_static/class1/Lab1/image008.png
    :width: 4.5in
    :height: 0.96in
-.. |image009| image:: media/image009.png
+.. |image009| image:: /docs/_static/class1/Lab1/image009.png
    :width: 4.5in
    :height: 1.69in
-.. |image010| image:: media/image010.png
+.. |image010| image:: /docs/_static/class1/Lab1/image010.png
    :width: 4.5in
    :height: 2.94in
-.. |image011| image:: media/image011.png
+.. |image011| image:: /docs/_static/class1/Lab1/image011.png
    :width: 4.5in
    :height: 0.80in
-.. |image012| image:: media/image012.png
+.. |image012| image:: /docs/_static/class1/Lab1/image012.png
    :width: 4.5in
    :height: 1.12in
-.. |image013| image:: media/image013.png
+.. |image013| image:: /docs/_static/class1/Lab1/image013.png
    :width: 4.5in
    :height: 4.00in
-.. |image014| image:: media/image014.png
+.. |image014| image:: /docs/_static/class1/Lab1/image014.png
    :width: 4.5in
    :height: 1.48in
-.. |image015| image:: media/image015.png
+.. |image015| image:: /docs/_static/class1/Lab1/image015.png
    :width: 4.5in
    :height: 1.12in
-.. |image016| image:: media/image016.png
+.. |image016| image:: /docs/_static/class1/Lab1/image016.png
    :width: 4.5in
    :height: 1.54in
-.. |image017| image:: media/image017.png
+.. |image017| image:: /docs/_static/class1/Lab1/image017.png
    :width: 4.5in
    :height: 1.29in
-.. |image018| image:: media/image018.png
+.. |image018| image:: /docs/_static/class1/Lab1/image018.png
    :width: 4.5in
    :height: 5.46in
-.. |image019| image:: media/image019.png
+.. |image019| image:: /docs/_static/class1/Lab1/image019.png
    :width: 4.5in
    :height: 2.13in
-.. |image020| image:: media/image020.png
+.. |image020| image:: /docs/_static/class1/Lab1/image020.png
    :width: 4.5in
    :height: 1.01in
-.. |image021| image:: media/image021.png
+.. |image021| image:: /docs/_static/class1/Lab1/image021.png
    :width: 4.5in
    :height: 1.93in
