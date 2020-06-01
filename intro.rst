@@ -6,17 +6,15 @@ lab and access your jump host.
 
 To access your dedicated student lab environment, you will require a web browser and Remote Desktop Protocol (RDP) client software. The web browser will be used to access the Lab Training Portal. The RDP client will be used to connect to the Jump Host, where you will be able to access the BIG-IP management interfaces (HTTPS, SSH).
 
-#. Establish an RDP connection to your Jump Host and login with the following credentials:
+1. Establish an RDP connection to your Jump Host and login with the following credentials:
+User: **user1**
+Password: **user1**
 
-	User: **user1**
-	Password: **user1**
+2. Access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
 
-#. Access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
-
-#. Login into the BIG-IP Configuration Utility with the following credentials:
-
-	User: **admin**
-	Password: **admin**
+3. Login into the BIG-IP Configuration Utility with the following credentials:
+User: **admin**
+Password: **admin**
 
 .. NOTE::
 	 All work for this lab will be performed exclusively from the Windows
@@ -27,9 +25,7 @@ Lab Topology
 ~~~~~~~~~~~~
 
 
-  .. image:: media/image000.png
-		 :width: 5.15
-		 :height: 3.30
+|image001|  
 
 The following components have been included in your lab environment:
 
@@ -69,10 +65,10 @@ components:
 +------------------------+-------------------------+--------------------------+
 | web.f5lab.local        | - Management 10.1.1.9   |                          |
 |                        | - Internal   10.1.20.9  |                          |
-|			     		           | - Internal   10.1.20.19 |                          |
+|			             | - Internal   10.1.20.19 |                          |
 +------------------------+-------------------------+--------------------------+
 | radius.f5lab.local     | - Management 10.1.1.8   |                          |
 |                        | - Internal   10.1.20.8  |                          |
 +------------------------+-------------------------+--------------------------+
 
-.
+|image000| image:: media/image000.png
