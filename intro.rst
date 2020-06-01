@@ -25,7 +25,7 @@ Lab Topology
 ~~~~~~~~~~~~
 
 
-  .. image:: media/Access2020.png
+  .. image:: media/image000.png
 		 :width: 5.15
 		 :height: 3.30
 
