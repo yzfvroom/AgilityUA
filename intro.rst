@@ -71,4 +71,4 @@ components:
 |                        | - Internal   10.1.20.8  |                          |
 +------------------------+-------------------------+--------------------------+
 
-... |image000| image:: media/image000.png
+.. |image000| image:: media/image000.png
