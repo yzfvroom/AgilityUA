@@ -25,7 +25,7 @@ Lab Topology
 ~~~~~~~~~~~~
 
 
-|image001|  
+|image001|
 
 The following components have been included in your lab environment:
 
@@ -71,4 +71,4 @@ components:
 |                        | - Internal   10.1.20.8  |                          |
 +------------------------+-------------------------+--------------------------+
 
-|image000| image:: media/image000.png
+... |image000| image:: media/image000.png
