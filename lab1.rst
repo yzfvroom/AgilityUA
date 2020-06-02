@@ -62,10 +62,10 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | #. Check the **Sign Authentication Request** checkbox                                        |
 |                                                                                              |
-| #. Select **/Common/SAML** from drop down menu for the                                       |
+| #. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
 |    **Message Signing Private Key**                                                           |
 |                                                                                              |
-| #. Select **/Common/SAML** from drop down menu for the                                       |
+| #. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
 |    **Message Signing Certificate**                                                           |
 |                                                                                              |
 | #. Click **OK** on the dialogue box                                                          |
