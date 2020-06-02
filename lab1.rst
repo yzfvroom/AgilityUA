@@ -95,13 +95,13 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | #. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
 |                                                                                              |
-|    the **prebuilt-idp.acme.com_metadata.xml** file from the Desktop of your jump host.       |
+|    the **idp.acme.com_metadata.xml** file from the C:\Labfiles\SAML Metadata jump host.      |
 |                                                                                              |
-| #. In the **Identity Provider Name** field enter the following: **prebuilt-idp.acme.com**    |
+| #. In the **Identity Provider Name** field enter the following: **idp.acme.com**             |
 |                                                                                              |
 | #. Click **OK** on the dialogue box.                                                         |
 |                                                                                              |
-| *Note: The idp.acme.com-app_metadata.xml was created previously. Oftentimes, iDP*            |
+| *Note: The idp.acme.com_metadata.xml was created previously. Oftentimes, iDP*                |
 |                                                                                              |
 | *providers will have a metadata file representing their IdP service. This can be*            |
 |                                                                                              |
@@ -120,7 +120,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    horizontal navigation menu.                                                               |
 |                                                                                              |
-| #. Click the **Checkbox** next to the previously created **app.f5demo.com** and select       |
+| #. Click the **Checkbox** next to the previously created **app.acme.com** and select         |
 |                                                                                              |
 |    **Bind/Unbind IdP Connectors** button at the bottom of the GUI.                           |
 +----------------------------------------------------------------------------------------------+
@@ -132,7 +132,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | #. In the added row click the **Down Arrow** under **SAML IdP Connectors** and select the    |
 |                                                                                              |
-|    **/Common/idp.partner.com** SAML IdP Connector previously created.                        |
+|    **/Common/idp.acme.com** SAML IdP Connector previously created.                           |
 |                                                                                              |
 | #. Click the **Update** button and the **OK** button at the bottom of the dialogue box.      |
 +----------------------------------------------------------------------------------------------+
