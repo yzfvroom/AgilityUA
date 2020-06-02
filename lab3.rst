@@ -112,21 +112,13 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
+| 3. Give the policy a name and select the Language Settings                                   |
 |                                                                                              |
-|    the **idp.acme.com_metadata.xml** file from the C:\Labfiles\SAML Metadata jump host.      |
+|    -  **Name**: **app.acme.com-PRP**                                                         |
 |                                                                                              |
-| 5. In the **Identity Provider Name** field enter the following: **idp.acme.com**             |
-|                                                                                              |
-| 6. Click **OK** on the dialogue box.                                                         |
-|                                                                                              |
-| *Note: The idp.acme.com_metadata.xml was created previously. Oftentimes, iDP*                |
-|                                                                                              |
-| *providers will have a metadata file representing their IdP service. This can be*            |
-|                                                                                              |
-| *imported to save object creation time as it has been done in this lab*                      |
+|    -  **Accept Languages**: **English (en)**                                                 |
 +----------------------------------------------------------------------------------------------+
-| |image005|                                                                                   |
+| |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 .. |image001| image:: media/Lab3/image001.png
