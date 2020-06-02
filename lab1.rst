@@ -30,21 +30,21 @@ TASK 1: Configure the SAML Service Provider (SP)
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+| 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
 |     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
 |     - Login with credentials admin/admin                                                     |
 |                                                                                              |
-| #. Begin by selecting: **Access -> Federation -> SAML Service Provider** ->                  |
+| 2. Begin by selecting: **Access -> Federation -> SAML Service Provider** ->                  |
 |                                                                                              |
 |    **Local SP Services**                                                                     |
 |                                                                                              |
-| #. Click the **Create** button (far right)                                                   |
+| 3. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Create New SAML SP Service**  dialogue box click **General Settings** in         |
+| 4. In the **Create New SAML SP Service**  dialogue box click **General Settings** in         |
 |                                                                                              |
 |    the left navigation pane and key in the following as shown:                               |
 |                                                                                              |
@@ -58,17 +58,17 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. Click on the **Security Settings** in the left navigation menu.                           |
+| 5. Click on the **Security Settings** in the left navigation menu.                           |
 |                                                                                              |
-| #. Check the **Sign Authentication Request** checkbox                                        |
+| 6. Check the **Sign Authentication Request** checkbox                                        |
 |                                                                                              |
-| #. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
+| 7. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
 |    **Message Signing Private Key**                                                           |
 |                                                                                              |
-| #. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
+| 8. Select **/Common/acme.com-wildcard** from drop down menu for the                          |
 |    **Message Signing Certificate**                                                           |
 |                                                                                              |
-| #. Click **OK** on the dialogue box                                                          |
+| 9. Click **OK** on the dialogue box                                                          |
 +----------------------------------------------------------------------------------------------+
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -79,27 +79,27 @@ TASK 2: Configure the External SAML IdP Connector
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Click on the **Access** -> **Federation** -> **SAML Service Provider** ->                 |
+| 1. Click on the **Access** -> **Federation** -> **SAML Service Provider** ->                 |
 |                                                                                              |
 |    **External IdP Connectors** or click on the **SAML Service Provider** tab in the          |
 |                                                                                              |
 |    horizontal navigation menu and select **External IdP Connectors**.                        |
 |                                                                                              |
-| #. Click specifically on the **Down Arrow** next to the **Create** button (far right)        |
+| 2. Click specifically on the **Down Arrow** next to the **Create** button (far right)        |
 |                                                                                              |
-| #. Select **From Metadata** from the drop down menu                                          |
+| 3. Select **From Metadata** from the drop down menu                                          |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
+| 4. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
 |                                                                                              |
 |    the **idp.acme.com_metadata.xml** file from the C:\Labfiles\SAML Metadata jump host.      |
 |                                                                                              |
-| #. In the **Identity Provider Name** field enter the following: **idp.acme.com**             |
+| 5. In the **Identity Provider Name** field enter the following: **idp.acme.com**             |
 |                                                                                              |
-| #. Click **OK** on the dialogue box.                                                         |
+| 6. Click **OK** on the dialogue box.                                                         |
 |                                                                                              |
 | *Note: The idp.acme.com_metadata.xml was created previously. Oftentimes, iDP*                |
 |                                                                                              |
@@ -116,11 +116,11 @@ TASK: 3: Bind the External SAML IdP Connector to the SAML SP
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Click on the **Local SP Services** from the **SAML Service Provider** tab in the          |
+| 1. Click on the **Local SP Services** from the **SAML Service Provider** tab in the          |
 |                                                                                              |
 |    horizontal navigation menu.                                                               |
 |                                                                                              |
-| #. Click the **Checkbox** next to the previously created **app.acme.com** and select         |
+| 2. Click the **Checkbox** next to the previously created **app.acme.com** and select         |
 |                                                                                              |
 |    **Bind/Unbind IdP Connectors** button at the bottom of the GUI.                           |
 +----------------------------------------------------------------------------------------------+
@@ -128,19 +128,19 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Edit SAML IdP’s that use this SP** dialogue box click the **Add New Row** button |
+| 3. In the **Edit SAML IdP’s that use this SP** dialogue box click the **Add New Row** button |
 |                                                                                              |
-| #. In the added row click the **Down Arrow** under **SAML IdP Connectors** and select the    |
+| 4. In the added row click the **Down Arrow** under **SAML IdP Connectors** and select the    |
 |                                                                                              |
 |    **/Common/idp.acme.com** SAML IdP Connector previously created.                           |
 |                                                                                              |
-| #. Click the **Update** button and the **OK** button at the bottom of the dialogue box.      |
+| 5. Click the **Update** button and the **OK** button at the bottom of the dialogue box.      |
 +----------------------------------------------------------------------------------------------+
 | |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. Under the **Access** -> **Federation** -> **SAML Service Provider** ->                    |
+| 6. Under the **Access** -> **Federation** -> **SAML Service Provider** ->                    |
 |                                                                                              |
 |    **Local SP Services** menu you should now see the following (as shown):                   |
 |                                                                                              |
@@ -157,16 +157,16 @@ TASK 4: Configure the SAML SP Access Policy
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Begin by selecting: **Access** -> **Profiles/Policies** -> **Access Profiles**            |
+| 1. Begin by selecting: **Access** -> **Profiles/Policies** -> **Access Profiles**            |
 |    **(Per-Session Policies)**                                                                |
 |                                                                                              |
-| #. Click the **Create** button (far right)                                                   |
+| 2. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **New Profile** window, key in the following as shown:                             |
+| 3. In the **New Profile** window, key in the following as shown:                             |
 |                                                                                              |
 |    -  **Name**: **app.acme.com-policy**                                                      |
 |                                                                                              |
@@ -174,9 +174,9 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **Profile Scope**: **Profile** (default)                                               |
 |                                                                                              |
-| #. Scroll to the bottom of the **New Profile** window to the **Language Settings**           |
+| 4. Scroll to the bottom of the **New Profile** window to the **Language Settings**           |
 |                                                                                              |
-| #. Select **English** from the **Factory Built-in Languages** menu on the right and click    |
+| 5. Select **English** from the **Factory Built-in Languages** menu on the right and click    |
 |                                                                                              |
 |    the **Double Arrow (<<)**, then click the **Finished** button.                            |
 +----------------------------------------------------------------------------------------------+
@@ -184,7 +184,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. From the **Access** -> **Profiles/Policies** -> **Access Profiles**                       |
+| 6. From the **Access** -> **Profiles/Policies** -> **Access Profiles**                       |
 |    **(Per-Session Policies)**,                                                               |
 |                                                                                              |
 |    click the **Edit** link on the previously created **app.acme.com-policy** line.           |
@@ -193,11 +193,11 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Visual Policy Editor** window for the **/Common/app.acme.com-policy**, click     |
+| 7. In the **Visual Policy Editor** window for the **/Common/app.acme.com-policy**, click     |
 |                                                                                              |
 |    the **Plus (+) Sign** between **Start** and **Deny**.                                     |
 |                                                                                              |
-| #. In the pop-up dialogue box select the **Authentication** tab and then click the **Radio** |
+| 8. In the pop-up dialogue box select the **Authentication** tab and then click the **Radio** |
 |                                                                                              |
 |    **Button** next to **SAML Auth**. Once selected click the **Add Item** button.            |
 +----------------------------------------------------------------------------------------------+
@@ -207,21 +207,21 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **SAML Auth** configuration window, select **/Common/app.acme.com** from the       |
+| 9. In the **SAML Auth** configuration window, select **/Common/app.acme.com** from the       |
 |                                                                                              |
 |    **SAML Authentication**, **AAA Server** drop down menu.                                   |
 |                                                                                              |
-| #. Click the **Save** button at the bottom of the configuration window.                      |
+| 10. Click the **Save** button at the bottom of the configuration window.                     |
 +----------------------------------------------------------------------------------------------+
 | |image014|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Visual Policy Editor** select the **Deny** along the **Successful** branch       |
+| 11. In the **Visual Policy Editor** select the **Deny** along the **Successful** branch      |
 |                                                                                              |
 |    following the **SAML Auth**                                                               |
 |                                                                                              |
-| #. From the **Select Ending** dialogue box select the **Allow Radio Button** and then        |
+| 12. From the **Select Ending** dialogue box select the **Allow Radio Button** and then       |
 |                                                                                              |
 |    click **Save**.                                                                           |
 +----------------------------------------------------------------------------------------------+
@@ -229,7 +229,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **Visual Policy Editor** click the **Apply Access Policy** (top left) and close    |
+| 13. In the **Visual Policy Editor** click the **Apply Access Policy** (top left) and close   |
 |                                                                                              |
 |    the **Visual Policy Editor**.                                                             |
 |                                                                                              |
@@ -248,15 +248,15 @@ TASK 5: Create the SP Virtual Server & Apply the SP Access Policy
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Begin by selecting: **Local Traffic** -> **Virtual Servers**                              |
+| 1. Begin by selecting: **Local Traffic** -> **Virtual Servers**                              |
 |                                                                                              |
-| #. Click the **Create** button (far right)                                                   |
+| 2. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image017|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. In the **New Virtual Server** window, key in the following as shown:                      |
+| 3. In the **New Virtual Server** window, key in the following as shown:                      |
 |                                                                                              |
 |    -  **Name**: **app.acme.com**                                                             |
 |                                                                                              |
@@ -270,17 +270,17 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **Source Address Translation:**  **Auto Map**                                          |
 |                                                                                              |
-| #. Scroll to the **Access Policy** section                                                   |
+| 4. Scroll to the **Access Policy** section                                                   |
 |                                                                                              |
 |    -  **Access Profile**: **app.acme.com-policy**                                            |
 |                                                                                              |
 |                                                                                              |
 |                                                                                              |
-| #. Scroll to the Resource section                                                            |
+| 5. Scroll to the Resource section                                                            |
 |                                                                                              |
 |    -  **Default Pool**: **iis_pool\_pool**                                                   |
 |                                                                                              |
-| #. Scroll to the bottom of the configuration window and click **Finished**                   |
+| 6. Scroll to the bottom of the configuration window and click **Finished**                   |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |image018|                                                                                   |
@@ -293,7 +293,7 @@ TASK 6: Test the SAML SP
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| #. Using your browser from the Jump Host click on the provided bookmark or navigate to       |
+| 1. Using your browser from the Jump Host click on the provided bookmark or navigate to       |
 |                                                                                              |
 |    https://app.acme.com . The SAML SP that you have just configured.                         |
 +----------------------------------------------------------------------------------------------+
@@ -301,9 +301,9 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| #. Did you successfully redirect to the IdP?                                                 |
+| 2. Did you successfully redirect to the IdP?                                                 |
 |                                                                                              |
-| #. Login to the iDP, were you successfully authenticated? (use credentials provided in the   |
+| 3. Login to the iDP, were you successfully authenticated? (use credentials provided in the   |
 |                                                                                              |
 |    Authentication Information section at the beginning of this guide)                        |
 |                                                                                              |
@@ -311,13 +311,13 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **Password**: **user1**                                                                |
 |                                                                                              |
-| #. After successful authentication, were you returned to the SAML SP?                        |
+| 4. After successful authentication, were you returned to the SAML SP?                        |
 |                                                                                              |
-| #. Were you successfully authenticated (SAML)?                                               |
+| 5. Were you successfully authenticated (SAML)?                                               |
 |                                                                                              |
-| #. Review your **Active Sessions** (**Access Overview** -> **Active Sessions**)              |
+| 6. Review your **Active Sessions** (**Access Overview** -> **Active Sessions**)              |
 |                                                                                              |
-| #. Review your Access Report Logs (**Access** -> **Overview Access Reports**)                |
+| 7. Review your Access Report Logs (**Access** -> **Overview Access Reports**)                |
 +----------------------------------------------------------------------------------------------+
 | |image021|                                                                                   |
 +----------------------------------------------------------------------------------------------+
