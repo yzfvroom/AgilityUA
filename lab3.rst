@@ -1,4 +1,4 @@
-Lab 3: LTM+APM Per Request Policies
+Lab 3: APM Per Request Policies
 ==========================================
 
 .. toctree::
@@ -29,6 +29,7 @@ to external URL categories.
 
 
 Objective:
+----------
 
 -  Gain an understanding of Per Request policies
 
@@ -36,12 +37,13 @@ Objective:
 
 
 Lab Requirements:
+-----------------
 
 -  All lab requirements will be noted in the tasks that follow
 
 Estimated completion time: 10 minutes
 
-Lab 1 Tasks:
+Lab 3 Tasks:
 -----------------
 
 TASK 1: Create Per Session Policy
