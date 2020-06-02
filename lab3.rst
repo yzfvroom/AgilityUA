@@ -142,6 +142,29 @@ Refer to the instructions and screen shots below:
 | |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 10. Click on the **SAML Auth** box in the new Subroutine and select the AAA Server and Save  |
+|                                                                                              |
+|     -  **Name**: **/Common/app.acme.com**                                                    |
+|                                                                                              |
+|    *Note:  This object was created in Lab 1*                                                 |
+|                                                                                              |
+| 11. Click the **Edit Terminals** Button                                                      |
+|                                                                                              |
+| 12. Click *Add Terminal* in the new window                                                   |
+|                                                                                              |
+| 13. Name one terminal **Success** and the other **Failure**                                  |
+|                                                                                              |
+| 14. Change the order so that **Success** is on top and **Failure** is on the bottom          |
+|                                                                                              |
+| 15. Click on **Set Default** table and set **Failure** as the default, click Save            |
+|                                                                                              |
+| 16. Click the fallback box and change the terminal to **Failure**, click Save                |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image009|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 .. |image001| image:: media/Lab3/image001.png
    :width: 4.5in
    :height: 0.74in
