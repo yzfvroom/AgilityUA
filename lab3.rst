@@ -95,6 +95,40 @@ Refer to the instructions and screen shots below:
 | |image004|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
+TASK 2: Configure SAML Per Request Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Refer to the instructions and screen shots below:
+
++----------------------------------------------------------------------------------------------+
+| In Lab 1 we created all the SAML SP objects and bound them to an IdP.  Now we will           |
+| leverage those objects to create our SAML Per-Request Policy                                 |
+|                                                                                              |
+| 1. Begin by selecting: **Access -> Profiles/Policies -> Per Request Policies** ->            |
+|                                                                                              |
+| 2. Click the **Create** button (far right)                                                   |
++----------------------------------------------------------------------------------------------+
+| |image005|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
+|                                                                                              |
+|    the **idp.acme.com_metadata.xml** file from the C:\Labfiles\SAML Metadata jump host.      |
+|                                                                                              |
+| 5. In the **Identity Provider Name** field enter the following: **idp.acme.com**             |
+|                                                                                              |
+| 6. Click **OK** on the dialogue box.                                                         |
+|                                                                                              |
+| *Note: The idp.acme.com_metadata.xml was created previously. Oftentimes, iDP*                |
+|                                                                                              |
+| *providers will have a metadata file representing their IdP service. This can be*            |
+|                                                                                              |
+| *imported to save object creation time as it has been done in this lab*                      |
++----------------------------------------------------------------------------------------------+
+| |image005|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 .. |image001| image:: media/Lab3/image001.png
    :width: 4.5in
    :height: 0.74in
