@@ -168,11 +168,11 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 17. Click on the + between Start and Allow in the main policy                                |
 |                                                                                              |
-| 11. Click the Subroutine table                                                               |
+| 18. Click the Subroutine table                                                               |
 |                                                                                              |
-| 12. Choose SAML Auth                                                                         |
+| 19. Choose SAML Auth                                                                         |
 |                                                                                              |
-| 13. Click **Add Item**                                                                       |
+| 20. Click **Add Item**                                                                       |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |image010|                                                                                   |
