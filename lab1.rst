@@ -258,7 +258,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 3. In the **New Virtual Server** window, key in the following as shown:                      |
 |                                                                                              |
-|    -  **Name**: **app.f5demo.com**                                                           |
+|    -  **Name**: **app.acme.com**                                                             |
 |                                                                                              |
 |    -  **Destination Address/Mask**: **10.1.10.100**                                          |
 |                                                                                              |
