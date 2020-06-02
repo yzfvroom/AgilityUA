@@ -30,8 +30,7 @@ Refer to the instructions and screen shots below:
 |     - Login with credentials admin/admin                                                     |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
-|                                                                                              |
-+----------------------------------------------------------------------------------------------+
+
 
 Task 2: General Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,31 +41,48 @@ is not successfully allowing access or not performing as intended.
 +----------------------------------------------------------------------------------------------+
 | **Questions to ask yourself?**                                                               |
 |                                                                                              |
-| - Do we have proper Network Connectivity?                                                    |
+|   - Do we have proper Network Connectivity?                                                  |
 |                                                                                              |
-| - Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to reach|
-|   destination targets it requires to access?                                                 |
+|   - Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to    |
+|     reach destination targets it requires to access?                                         |
 |                                                                                              |
-| - Do we have DNS setup properly?                                                             |
+|   - Do we have DNS setup properly?                                                           |
 |                                                                                              |
-| - Do we have NTP setup properly?                                                             |
+|   - Do we have NTP setup properly?                                                           |
 |                                                                                              |
-| - Are we receiving any Warnings or Error messages when we logon?                             |
+|   - Are we receiving any Warnings or Error messages when we logon?                           |
 |                                                                                              |
-| - Are there any missing dependencies?                                                        |
+|   - Are there any missing dependencies?                                                      |
 |                                                                                              |
 |**Now it is time to check on our Sessions under Active Sessions Menu**                        |
 |                                                                                              |
-|Go to **Access -> Overview -> Active Session**                                                |
+| 1. Go to **Access -> Overview -> Active Sessions**                                           |
+|                                                                                              |
+|   *Note:  There may not be active sessions within lab proceed to step 2 to generate a        |
+|           session and examine the properties*                                                |
 |                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 2. Open Chrome and go to **https://app.acme.com**                                            |
+|                                                                                              |
+| 3. Enter your credentials **User1/User1**                                                    |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image002|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-Now it is time to check on our Sessions under Manage Session Menu
++----------------------------------------------------------------------------------------------+
+| 4. Return to your BIG-IP **Access -> Overview -> Active Sessions**                           |
+|                                                                                              |
+| 5. Under Auto Refresh you can choose to Refresh or set how frequently to Auto Refresh        |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image003|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-|image12|
 
     - What can we see from the Manage Session Menu?
     - If we click the Session ID link what more information is available?
