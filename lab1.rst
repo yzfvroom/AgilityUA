@@ -168,7 +168,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 3. In the **New Profile** window, key in the following as shown:                             |
 |                                                                                              |
-|    -  **Name**: **app.f5demo.com-policy**                                                    |
+|    -  **Name**: **app.acme.com-policy**                                                      |
 |                                                                                              |
 |    -  **Profile Type**: **All** (from drop down)                                             |
 |                                                                                              |
