@@ -32,66 +32,97 @@ Objective:
 
 -  Gain an understanding of Per Request policies
 
--  Gain an understanding of Step-up Authentication
-
--  Gain an understanding of Group Control
+-  Gain an understanding of use for Per Request Policy
 
 
 Lab Requirements:
 
 -  All lab requirements will be noted in the tasks that follow
 
-Estimated completion time: 20 minutes
+Estimated completion time: 10 minutes
 
-TASK 1 –
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lab 1 Tasks:
+-----------------
 
-Creating a per-request policy
+TASK 1: Create Per Session Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#.	On the Main tab, click Access, Profiles, Per-Request Policies.
-#.	Click Create
-#.	In the Name field, type the following name for the policy - URL_Filter_User_Group
-#.	Leave the Policy Type set to All
-#.	In the Languages setting, select English
-#.	Click Finished
+Refer to the instructions and screen shots below:
+
++----------------------------------------------------------------------------------------------+
+| 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+|     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
+|     - Login with credentials admin/admin                                                     |
+|                                                                                              |
+| 2. Begin by selecting: **Access -> Profiles/Policies -> Per Session Policies** ->            |
+|                                                                                              |
+| 3. Click the **Create** button (far right)                                                   |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 
-Modifying the URL_Filter_User_Group policy
 
-#.  On the Main tab, click Access, Profiles, Per-Request Policies
-#.  Click the Edit link for the URL_Filter_User_Group Per-Request policy
-#.  Click the + button, and click on the Classification tab and select the Category Lookup item
-#.  Click finished
-#.  Now click the plus sign to the right of Category Lookup
-#.  On the Authentication tab select AD Group Lookup
-#.  Click on the Branch Rules tab
-#.  Click Add Branch Rule
-#.  The first Branch Rule will be named "Users Primary Group ID Sales Engineering"
-#.  For the first Branch Rule click on the change which will open a new window
-#.  Click on Add Expression, the click on the Advanced tab
-#.  Copy the following: expr {[mcget {session.ad.last.attr.primaryGroupID}] == Sales Engineering}
-#.  Click Finished
-#.  Now click Add Branch Rule
-#.  Click on the Advanced tab and copy the following: expr {[mcget {session.ad.last.attr.primaryGroupID}] == Sales}
-#.  Click Finished and then click Save
-#.  On the "User Primary Group ID Sales Engineering Branch click the plus sign
-#.  Click the Classification tab item and click Add Item
-#.  Within the URL Filter drop down menu select /Common/basic-security
-#.  Click Save
-#.  Now click on the plus sign to the right of AD Group Lookup title "User Primary Group ID Sales"
-#.  Click the Classification tab and select URL Filter Assign, and within URL Filter select /Common/allow-allow
-#.  Click Save
-#.  Ensure the Fallback branch for both URL Filter Assign objects is configured for Allow with fallback set to Reject
-
-#. On the Main tab, click Access, Per Session Policies and click create
-#. Name the Policy AD_Auth
-#. Ensure the Profile Type is set to All while leaving all other defaults and click Finished
-#. Now we will Edit the AD_Auth Per Session Policy
-#. Click the Edit button
-#. Click the + sign to the right of Start
-#. Click the Authentication tab, and click on the AD Auth item and click Add Item
-#. Under the Active Directory settings select the /Common/pre-built-ad-servers
-#. Ensure the "Show Extended Error" setting is set to Disabled
-#. Ensure the Successful Branch is set to Allow
-
-** At this point you should now have a Per-Request Policy and a Per-Session Policy**
+.. |image001| image:: media/Lab3/image001.png
+   :width: 4.5in
+   :height: 0.74in
+.. |image002| image:: media/Lab3/image002.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image003| image:: media/Lab3/image003.png
+   :width: 4.5in
+   :height: 3.38in
+.. |image004| image:: media/Lab3/image004.png
+   :width: 4.5in
+   :height: 0.73in
+.. |image005| image:: media/Lab3/image005.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image006| image:: media/Lab3/image006.png
+   :width: 4.5in
+   :height: 1.15in
+.. |image007| image:: media/Lab3/image007.png
+   :width: 4.5in
+   :height: 2.28in
+.. |image008| image:: media/Lab3/image008.png
+   :width: 4.5in
+   :height: 0.96in
+.. |image009| image:: media/Lab3/image009.png
+   :width: 4.5in
+   :height: 1.69in
+.. |image010| image:: media/Lab3/image010.png
+   :width: 4.5in
+   :height: 2.94in
+.. |image011| image:: media/Lab3/image011.png
+   :width: 4.5in
+   :height: 0.80in
+.. |image012| image:: media/Lab3/image012.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image013| image:: media/Lab3/image013.png
+   :width: 4.5in
+   :height: 4.00in
+.. |image014| image:: media/Lab3/image014.png
+   :width: 4.5in
+   :height: 1.48in
+.. |image015| image:: media/Lab3/image015.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image016| image:: media/Lab3/image016.png
+   :width: 4.5in
+   :height: 1.54in
+.. |image017| image:: media/Lab3/image017.png
+   :width: 4.5in
+   :height: 1.29in
+.. |image018| image:: media/Lab3/image018.png
+   :width: 4.5in
+   :height: 5.46in
+.. |image019| image:: media/Lab3/image019.png
+   :width: 4.5in
+   :height: 2.13in
+.. |image020| image:: media/Lab3/image020.png
+   :width: 4.5in
+   :height: 1.01in
+.. |image021| image:: media/Lab3/image021.png
+   :width: 4.5in
+   :height: 1.93in
