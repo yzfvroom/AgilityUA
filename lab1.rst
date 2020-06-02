@@ -144,9 +144,9 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    **Local SP Services** menu you should now see the following (as shown):                   |
 |                                                                                              |
-|    -  **Name**: **app.f5demo.com**                                                           |
+|    -  **Name**: **app.acme.com**                                                             |
 |                                                                                              |
-|    -  **SAML IdP Connectors**: **idp.partner.com**                                           |
+|    -  **SAML IdP Connectors**: **idp.acme.com**                                              |
 +----------------------------------------------------------------------------------------------+
 | |image008|                                                                                   |
 +----------------------------------------------------------------------------------------------+
