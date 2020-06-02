@@ -28,7 +28,6 @@ Refer to the instructions and screen shots below:
 | 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
 |     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
 |     - Login with credentials admin/admin                                                     |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 
 
@@ -55,29 +54,26 @@ is not successfully allowing access or not performing as intended.
 |                                                                                              |
 |**Now it is time to check on our Sessions under Active Sessions Menu**                        |
 |                                                                                              |
-| 1. Go to **Access -> Overview -> Active Sessions**                                           |
+|1. Go to **Access -> Overview -> Active Sessions**                                            |
 |                                                                                              |
 |   *Note:  There may not be active sessions within lab proceed to step 2 to generate a        |
 |           session and examine the properties*                                                |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 2. Open Chrome and go to **https://app.acme.com**                                            |
+|2. Open Chrome and go to **https://app.acme.com**                                             |
 |                                                                                              |
-| 3. Enter your credentials **User1/User1**                                                    |
-|                                                                                              |
+|3. Enter your credentials **User1/User1**                                                     |
 +----------------------------------------------------------------------------------------------+
 | |image002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Return to your BIG-IP **Access -> Overview -> Active Sessions**                           |
+|4. Return to your BIG-IP **Access -> Overview -> Active Sessions**                            |
 |                                                                                              |
-| 5. Under Auto Refresh you can choose to Refresh or set how frequently to Auto Refresh        |
-|                                                                                              |
+|5. Under Auto Refresh you can choose to Refresh or set how frequently to Auto Refresh         |
 +----------------------------------------------------------------------------------------------+
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -93,11 +89,10 @@ is not successfully allowing access or not performing as intended.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. Return to your BIG-IP **Access -> Overview -> Access Reports**                            |
+|6. Return to your BIG-IP **Access -> Overview -> Access Reports**                             |
 |                                                                                              |
-| 7. You can choose the amount of time you want to look at from here for the lab we will look  |
+|7. You can choose the amount of time you want to look at from here for the lab we will look   |
 |    at the last 1 hour                                                                        |
-|                                                                                              |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
 |                                                                                              |
