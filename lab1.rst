@@ -44,13 +44,13 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the **Create New SAML SP Service**  dialogue box click **General Settings** in         |
+| #. In the **Create New SAML SP Service**  dialogue box click **General Settings** in         |
 |                                                                                              |
 |    the left navigation pane and key in the following as shown:                               |
 |                                                                                              |
-|    -  **Name**: **app.f5demo.com**                                                           |
+|    -  **Name**: **app.acme.com**                                                             |
 |                                                                                              |
-|    -  **Entity ID**: **https://app.f5demo.com**                                              |
+|    -  **Entity ID**: **https://app.acme.com**                                                |
 |                                                                                              |
 |    *Note: The yellow box on Host will disappear when the Entity ID is entered.*              |
 +----------------------------------------------------------------------------------------------+
@@ -58,17 +58,17 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 5. Click on the **Security Settings** in the left navigation menu.                           |
+| #. Click on the **Security Settings** in the left navigation menu.                           |
 |                                                                                              |
-| 6. Check the **Sign Authentication Request** checkbox                                        |
+| #. Check the **Sign Authentication Request** checkbox                                        |
 |                                                                                              |
-| 7. Select **/Common/SAML.key** from drop down menu for the                                   |
+| #. Select **/Common/SAML** from drop down menu for the                                       |
 |    **Message Signing Private Key**                                                           |
 |                                                                                              |
-| 8. Select **/Common/SAML.crt** from drop down menu for the                                   |
+| #. Select **/Common/SAML** from drop down menu for the                                       |
 |    **Message Signing Certificate**                                                           |
 |                                                                                              |
-| 9. Click **OK** on the dialogue box                                                          |
+| #. Click **OK** on the dialogue box                                                          |
 +----------------------------------------------------------------------------------------------+
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -79,29 +79,29 @@ TASK 2: Configure the External SAML IdP Connector
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| 1. Click on the **Access** -> **Federation** -> **SAML Service Provider** ->                 |
+| #. Click on the **Access** -> **Federation** -> **SAML Service Provider** ->                 |
 |                                                                                              |
 |    **External IdP Connectors** or click on the **SAML Service Provider** tab in the          |
 |                                                                                              |
-|    horizontal navigation menu andselect **External IdP Connectors**.                         |
+|    horizontal navigation menu and select **External IdP Connectors**.                        |
 |                                                                                              |
-| 2. Click specifically on the **Down Arrow** next to the **Create** button (far right)        |
+| #. Click specifically on the **Down Arrow** next to the **Create** button (far right)        |
 |                                                                                              |
-| 3. Select **From Metadata** from the drop down menu                                          |
+| #. Select **From Metadata** from the drop down menu                                          |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
+| #. In the **Create New SAML IdP Connector** dialogue box, click **Browse** and select        |
 |                                                                                              |
-|    the **idp.partner.com-app\_metadata.xml** file from the Desktop of your jump host.        |
+|    the **prebuilt-idp.acme.com_metadata.xml** file from the Desktop of your jump host.       |
 |                                                                                              |
-| 5. In the **Identity Provider Name** field enter the following: **idp.partner.com**          |
+| #. In the **Identity Provider Name** field enter the following: **prebuilt-idp.acme.com**    |
 |                                                                                              |
-| 6. Click **OK** on the dialogue box.                                                         |
+| #. Click **OK** on the dialogue box.                                                         |
 |                                                                                              |
-| *Note: The idp.partner.com-app\_metadata.xml was created previously. Oftentimes, iDP*        |
+| *Note: The idp.acme.com-app_metadata.xml was created previously. Oftentimes, iDP*            |
 |                                                                                              |
 | *providers will have a metadata file representing their IdP service. This can be*            |
 |                                                                                              |
@@ -116,11 +116,11 @@ TASK: 3: Bind the External SAML IdP Connector to the SAML SP
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| 1. Click on the **Local SP Services** from the **SAML Service Provider** tab in the          |
+| #. Click on the **Local SP Services** from the **SAML Service Provider** tab in the          |
 |                                                                                              |
 |    horizontal navigation menu.                                                               |
 |                                                                                              |
-| 2. Click the **Checkbox** next to the previously created **app.f5demo.com** and select       |
+| #. Click the **Checkbox** next to the previously created **app.f5demo.com** and select       |
 |                                                                                              |
 |    **Bind/Unbind IdP Connectors** button at the bottom of the GUI.                           |
 +----------------------------------------------------------------------------------------------+
@@ -128,13 +128,13 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the **Edit SAML IdP’s that use this SP** dialogue box click the **Add New Row** button |
+| #. In the **Edit SAML IdP’s that use this SP** dialogue box click the **Add New Row** button |
 |                                                                                              |
-| 4. In the added row click the **Down Arrow** under **SAML IdP Connectors** and select the    |
+| #. In the added row click the **Down Arrow** under **SAML IdP Connectors** and select the    |
 |                                                                                              |
 |    **/Common/idp.partner.com** SAML IdP Connector previously created.                        |
 |                                                                                              |
-| 5. Click the **Update** button and the **OK** button at the bottom of the dialogue box.      |
+| #. Click the **Update** button and the **OK** button at the bottom of the dialogue box.      |
 +----------------------------------------------------------------------------------------------+
 | |image007|                                                                                   |
 +----------------------------------------------------------------------------------------------+
