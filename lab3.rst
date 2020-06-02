@@ -61,7 +61,22 @@ Refer to the instructions and screen shots below:
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-
++----------------------------------------------------------------------------------------------+
+| 4. Enter the name of the policy, profile type, and profile scope                             |
+|                                                                                              |
+|    -  **Name**: **app.acme.com-PSP**                                                         |
+|                                                                                              |
+|    -  **Profile Type**: **All**                                                              |
+|                                                                                              |
+|    -  **Profile Scope**: **Profile**                                                         |
+|                                                                                              |
+|    -  **Accept Languages**: **English (en)**                                                 |
+|                                                                                              |
+|    *Note: You will need a per session policy and a per request policy but we will be         |
+|           leaving the per session policy blank and performing our auth in per Request        |
++----------------------------------------------------------------------------------------------+
+| |image002|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 .. |image001| image:: media/Lab3/image001.png
    :width: 4.5in
