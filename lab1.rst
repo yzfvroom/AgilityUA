@@ -140,7 +140,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. Under the **Access** -> **Federation** -> **SAML Service Provider** ->                    |
+| #. Under the **Access** -> **Federation** -> **SAML Service Provider** ->                    |
 |                                                                                              |
 |    **Local SP Services** menu you should now see the following (as shown):                   |
 |                                                                                              |
@@ -157,16 +157,16 @@ TASK 4: Configure the SAML SP Access Policy
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| 1. Begin by selecting: **Access** -> **Profiles/Policies** -> **Access Profiles**            |
+| #. Begin by selecting: **Access** -> **Profiles/Policies** -> **Access Profiles**            |
 |    **(Per-Session Policies)**                                                                |
 |                                                                                              |
-| 2. Click the **Create** button (far right)                                                   |
+| #. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. In the **New Profile** window, key in the following as shown:                             |
+| #. In the **New Profile** window, key in the following as shown:                             |
 |                                                                                              |
 |    -  **Name**: **app.acme.com-policy**                                                      |
 |                                                                                              |
@@ -282,9 +282,6 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 6. Scroll to the bottom of the configuration window and click **Finished**                   |
 |                                                                                              |
-| *Note: The use of the Per-Request Policy is to provide header injection and other controls.* |
-|                                                                                              |
-| *These will be more utilized later in the lab.*                                              |
 +----------------------------------------------------------------------------------------------+
 | |image018|                                                                                   |
 |                                                                                              |
