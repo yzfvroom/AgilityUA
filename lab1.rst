@@ -187,13 +187,13 @@ Refer to the instructions and screen shots below:
 | 6. From the **Access** -> **Profiles/Policies** -> **Access Profiles**                       |
 |    **(Per-Session Policies)**,                                                               |
 |                                                                                              |
-|    click the **Edit** link on the previously created **app.f5demo.com-policy** line.         |
+|    click the **Edit** link on the previously created **app.acme.com-policy** line.           |
 +----------------------------------------------------------------------------------------------+
 | |image011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the **Visual Policy Editor** window for the **/Common/app.f5demo.com-policy**, click   |
+| 7. In the **Visual Policy Editor** window for the **/Common/app.acme.com-policy**, click     |
 |                                                                                              |
 |    the **Plus (+) Sign** between **Start** and **Deny**.                                     |
 |                                                                                              |
@@ -207,7 +207,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In the **SAML Auth** configuration window, select **/Common/app.f5demo.com** from the     |
+| 9. In the **SAML Auth** configuration window, select **/Common/app.acme.com** from the       |
 |                                                                                              |
 |    **SAML Authentication**, **AAA Server** drop down menu.                                   |
 |                                                                                              |
