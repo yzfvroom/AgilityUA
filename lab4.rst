@@ -99,6 +99,14 @@ is not successfully allowing access or not performing as intended.
 | |image005|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+|8. Let's review the reports information for the sessions                                      |
+|                                                                                              |
+|7. Pick a Session ID (your numbers will be different than the picture below)                  |
++----------------------------------------------------------------------------------------------+
+| |image006|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 # Time to Review the Reports information for the Session in question
 
     - What information is available from the ALL SESSIONS REPORT?
