@@ -121,6 +121,26 @@ Refer to the instructions and screen shots below:
 | |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 4. On the app.acme.com-PRP policy click **Edit**                                             |
+|                                                                                              |
+| 5. Click on **Add New Subroutine**                                                           |
+|                                                                                              |
+| 6. Give it a name and Click Save                                                             |
+|    -  **Name**: **SAML Auth**                                                                |
+|                                                                                              |
+| 7. Click the + between In and Out                                                            |
+|                                                                                              |
+| 8. Click the **Authentication** Tab                                                          |
+|                                                                                              |
+| 9. At the bottom of the list choose **SAML Auth** and click **Add Item**                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image007|                                                                                   |
+|                                                                                              |
+| |image008|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 .. |image001| image:: media/Lab3/image001.png
    :width: 4.5in
    :height: 0.74in
