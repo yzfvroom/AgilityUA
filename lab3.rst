@@ -78,6 +78,23 @@ Refer to the instructions and screen shots below:
 | |image002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 5. On the app.acme.com-PSP policy click **Edit**                                             |
+|                                                                                              |
+| 6. Click on the **Deny** and change the Select Ending to **Allow**                           |
+|                                                                                              |
+| 7. Click **Save**                                                                            |
+|                                                                                              |
+| 8. Click Apply policy                                                                        |
+|                                                                                              |
+|   *Note:  Nothing will be set in this policy we will simply establish a session and manage   |
+|           all the authentication in the Per-Request Policy*                                  |
++----------------------------------------------------------------------------------------------+
+| |image003|                                                                                   |
+|                                                                                              |
+| |image004|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 .. |image001| image:: media/Lab3/image001.png
    :width: 4.5in
    :height: 0.74in
