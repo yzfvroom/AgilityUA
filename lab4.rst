@@ -39,8 +39,7 @@ In this lab exercise, you will learn where to look and what to look at when an A
 is not successfully allowing access or not performing as intended.
 
 +----------------------------------------------------------------------------------------------+
-| **Questions to ask yourself?**                                                               |
-|                                                                                              |
+|**Questions to ask yourself?**                                                                |
 |   - Do we have proper Network Connectivity?                                                  |
 |                                                                                              |
 |   - Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to    |
@@ -83,11 +82,27 @@ is not successfully allowing access or not performing as intended.
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+|   - What can we see from the Manage Session Menu?                                            |
+|                                                                                              |
+|   - If we click the Session ID link what more information is available?                      |
+|                                                                                              |
+|    - Is Authentication Successful or is it Failing?                                          |
+|                                                                                              |
+|    - Is the user receiving the proper ENDING ALLOW from the Policy?                          |
++----------------------------------------------------------------------------------------------+
 
-    - What can we see from the Manage Session Menu?
-    - If we click the Session ID link what more information is available?
-    - Is Authentication Successful or is it Failing?
-    - Is the user receiving the proper ENDING ALLOW from the Policy?
++----------------------------------------------------------------------------------------------+
+| 6. Return to your BIG-IP **Access -> Overview -> Access Reports**                            |
+|                                                                                              |
+| 7. You can choose the amount of time you want to look at from here for the lab we will look  |
+|    at the last 1 hour                                                                        |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image004|                                                                                   |
+|                                                                                              |
+| |image005|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 # Time to Review the Reports information for the Session in question
 
