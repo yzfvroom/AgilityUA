@@ -87,9 +87,9 @@ is not successfully allowing access or not performing as intended.
 |                                                                                              |
 |   - If we click the Session ID link what more information is available?                      |
 |                                                                                              |
-|    - Is Authentication Successful or is it Failing?                                          |
+|   - Is Authentication Successful or is it Failing?                                           |
 |                                                                                              |
-|    - Is the user receiving the proper ENDING ALLOW from the Policy?                          |
+|   - Is the user receiving the proper ENDING ALLOW from the Policy?                           |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
