@@ -1,14 +1,17 @@
 Lab 4: Troubleshooting
-======================
+==========================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
 Welcome to the troubleshooting APM Policies lab.  This lab is optional.
 The lab exercises will provide guidance on how to configure and troubleshoot
 common Access Policy Manager (APM) issues as experienced by field engineers,
-support engineers, and customers.  This guide is intended to complement
-lecture material provided during the course as well as reference guide for
-students after the class as a basis for troubleshooting APM within your
-own environment.  The following troubleshooting techniques will be covered
-in this lab:
+support engineers, and customers.  This guide is intended to serve as a
+reference guide for students after the class as a basis for troubleshooting APM
+within your own environment.  The following troubleshooting techniques will be
+covered in this lab:
 
 -  Message Boxes
 -  Logs
@@ -17,31 +20,49 @@ in this lab:
 
 
 Task 1 - Jump Host
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Establish an RDP connection to your Jump Host as well as login to the GUI
-of the bigip1.f5lab.local BIG-IP system.
+Refer to the instructions and screen shots below:
+
++----------------------------------------------------------------------------------------------+
+| 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+|     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
+|     - Login with credentials admin/admin                                                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
 
 Task 2: General Troubleshooting
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this lab exercise, you will learn where to look and what to look at when an Access Policy
 is not successfully allowing access or not performing as intended.
 
-- Questions to ask yourself?
++----------------------------------------------------------------------------------------------+
+| **Questions to ask yourself?**                                                               |
+|                                                                                              |
+| - Do we have proper Network Connectivity?                                                    |
+|                                                                                              |
+| - Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to reach|
+|   destination targets it requires to access?                                                 |
+|                                                                                              |
+| - Do we have DNS setup properly?                                                             |
+|                                                                                              |
+| - Do we have NTP setup properly?                                                             |
+|                                                                                              |
+| - Are we receiving any Warnings or Error messages when we logon?                             |
+|                                                                                              |
+| - Are there any missing dependencies?                                                        |
+|                                                                                              |
+|**Now it is time to check on our Sessions under Active Sessions Menu**                        |
+|                                                                                              |
+|Go to **Access -> Overview -> Active Session**                                                |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-- Do we have proper Network Connectivity?
-
-- Are there any Upstream/Downstream Firewall Rules preventing APM to be reachable or to reach destination
-targets it requires to access?
-
-- Do we have DNS setup properly?
-
-- Do we have NTP setup properly?
-
-- Are we receiving any Warnings or Error messages when we logon?
-
-- Are there any missing dependencies?
 
 Now it is time to check on our Sessions under Manage Session Menu
 
@@ -249,3 +270,67 @@ and display the application data traffic.
 
 
 **This concludes Lab #4 basic troubleshooting steps and utilities**
+
+.. |image001| image:: media/Lab4/image001.png
+   :width: 4.5in
+   :height: 0.74in
+.. |image002| image:: media/Lab4/image002.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image003| image:: media/Lab4/image003.png
+   :width: 4.5in
+   :height: 3.38in
+.. |image004| image:: media/Lab4/image004.png
+   :width: 4.5in
+   :height: 0.73in
+.. |image005| image:: media/Lab4/image005.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image006| image:: media/Lab4/image006.png
+   :width: 4.5in
+   :height: 1.15in
+.. |image007| image:: media/Lab4/image007.png
+   :width: 4.5in
+   :height: 2.28in
+.. |image008| image:: media/Lab4/image008.png
+   :width: 4.5in
+   :height: 0.96in
+.. |image009| image:: media/Lab4/image009.png
+   :width: 4.5in
+   :height: 1.69in
+.. |image010| image:: media/Lab4/image010.png
+   :width: 4.5in
+   :height: 2.94in
+.. |image011| image:: media/Lab4/image011.png
+   :width: 4.5in
+   :height: 0.80in
+.. |image012| image:: media/Lab4/image012.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image013| image:: media/Lab4/image013.png
+   :width: 4.5in
+   :height: 4.00in
+.. |image014| image:: media/Lab4/image014.png
+   :width: 4.5in
+   :height: 1.48in
+.. |image015| image:: media/Lab4/image015.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image016| image:: media/Lab4/image016.png
+   :width: 4.5in
+   :height: 1.54in
+.. |image017| image:: media/Lab4/image017.png
+   :width: 4.5in
+   :height: 1.29in
+.. |image018| image:: media/Lab4/image018.png
+   :width: 4.5in
+   :height: 5.46in
+.. |image019| image:: media/Lab4/image019.png
+   :width: 4.5in
+   :height: 2.13in
+.. |image020| image:: media/Lab4/image020.png
+   :width: 4.5in
+   :height: 1.01in
+.. |image021| image:: media/Lab4/image021.png
+   :width: 4.5in
+   :height: 1.93in

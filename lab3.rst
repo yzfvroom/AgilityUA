@@ -41,7 +41,7 @@ Lab Requirements:
 
 -  All lab requirements will be noted in the tasks that follow
 
-Estimated completion time: 10 minutes
+Estimated completion time: 15 minutes
 
 Lab 3 Tasks:
 -----------------
