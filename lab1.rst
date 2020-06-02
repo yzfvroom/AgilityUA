@@ -298,7 +298,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 1. Using your browser from the Jump Host click on the provided bookmark or navigate to       |
 |                                                                                              |
-|    https://app.f5demo.com . The SAML SP that you have just configured.                       |
+|    https://app.acme.com . The SAML SP that you have just configured.                         |
 +----------------------------------------------------------------------------------------------+
 | |image020|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -310,9 +310,9 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    Authentication Information section at the beginning of this guide)                        |
 |                                                                                              |
-|    -  **Username**: **user**                                                                 |
+|    -  **Username**: **user1**                                                                |
 |                                                                                              |
-|    -  **Password**: **Agility1**                                                             |
+|    -  **Password**: **user1**                                                                |
 |                                                                                              |
 | 4. After successful authentication, were you returned to the SAML SP?                        |
 |                                                                                              |
