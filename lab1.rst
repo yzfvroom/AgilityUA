@@ -266,19 +266,19 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **HTTP Profile:** **http** (drop down)                                                 |
 |                                                                                              |
-|    -  **SSL Profile (client):** **app.f5demo.com-clientssl**                                 |
+|    -  **SSL Profile (client):** **acme_wildcard-clientssl**                                  |
 |                                                                                              |
 |    -  **Source Address Translation:**  **Auto Map**                                          |
 |                                                                                              |
 | 4. Scroll to the **Access Policy** section                                                   |
 |                                                                                              |
-|    -  **Access Profile**: **app.f5demo.com-policy**                                          |
+|    -  **Access Profile**: **app.acme.com-policy**                                            |
 |                                                                                              |
-|    -  **Per-Request Policy:** **saml\_policy**                                               |
+|                                                                                              |
 |                                                                                              |
 | 5. Scroll to the Resource section                                                            |
 |                                                                                              |
-|    -  **Default Pool**: **app.f5demo.com\_pool**                                             |
+|    -  **Default Pool**: **iis_pool\_pool**                                                   |
 |                                                                                              |
 | 6. Scroll to the bottom of the configuration window and click **Finished**                   |
 |                                                                                              |
@@ -288,7 +288,6 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | |image018|                                                                                   |
 |                                                                                              |
-| |image019|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 TASK 6: Test the SAML SP
