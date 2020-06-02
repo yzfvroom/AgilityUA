@@ -30,13 +30,15 @@ TASK 1: Configure the SAML Service Provider (SP)
 Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
-| 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+| #. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+|     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
+|     - Login with credentials admin/admin                                                     |
 |                                                                                              |
-| 2. Begin by selecting: **Access -> Federation -> SAML Service Provider** ->                  |
+| #. Begin by selecting: **Access -> Federation -> SAML Service Provider** ->                  |
 |                                                                                              |
 |    **Local SP Services**                                                                     |
 |                                                                                              |
-| 3. Click the **Create** button (far right)                                                   |
+| #. Click the **Create** button (far right)                                                   |
 +----------------------------------------------------------------------------------------------+
 | |image001|                                                                                   |
 +----------------------------------------------------------------------------------------------+
