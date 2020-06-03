@@ -121,13 +121,16 @@ Directory Domain.  Right click the **f5lab.local** and drop down menu will displ
 #. Create the AAA object by navigating to **Access, Authentication, Kerberos
 
 
-#. Specify a **Name** (AD Domain)
+#. Specify a **Name** (Kerberos_SSL)
 
 
-#. Specify the **Auth Realm** (Active Directory Domain)
+#. Specify the **Auth Realm** (f5lab.local)
 
 
-#. Browse to locate the Keytab file (The Keytab file should be located at c:\file.keytab)
+#. Service Name **HTTP**
+
+
+#. Click the **Choose File** button and browse to locate the Keytab file (The Keytab file should be located at c:\file.keytab)
 
 
 #. Click Finished to complete the creation of the AAA object
