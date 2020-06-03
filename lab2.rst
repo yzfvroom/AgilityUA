@@ -181,7 +181,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 21. Click on **Local Traffic -> Virtual Servers ** and choose the **app.acme.com**           |
+| 21. Click on **Local Traffic -> Virtual Servers** and choose the **app.acme.com**            |
 |                                                                                              |
 | 22. Scroll to the **Access Policy** section                                                  |
 |                                                                                              |
