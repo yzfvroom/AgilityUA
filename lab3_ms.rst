@@ -32,7 +32,7 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-##TASK 1: Create an SSO object and Webtop Resource
+TASK 1: Create an SSO object and Webtop Resource
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ______________________________________________________________
@@ -70,7 +70,7 @@ Webtop
 Click finished at the bottom of the GUI
 
 
-##TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keytab file
+TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keytab file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
@@ -116,7 +116,7 @@ console.   Click on Active Directory Users and Computers.
 #.  Review the AAA server configuration at Access, Authentication
 
 
-##TASK 3: Copy and Modify the idp.acme.com-policy Access Profile
+TASK 3: Copy and Modify the idp.acme.com-policy Access Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
@@ -252,8 +252,9 @@ ______________________________________________________________
    (top left), and close the **Visual Policy Editor**
 
 
-## TASK 4 - Test the Kerberos to SAML Configuration
+TASK 4 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+______________________________________________________________
 
 .. NOTE:: In the following Lab Task it is recommended that you use Microsoft
    Internet Explorer.  While other browsers also support Kerberos
