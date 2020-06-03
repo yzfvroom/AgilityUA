@@ -1,4 +1,4 @@
-Lab 3: APM Per Request Policies
+Lab 2: APM Per Request Policies
 ==========================================
 
 .. toctree::
