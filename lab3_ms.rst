@@ -43,6 +43,8 @@ SAML Resource
 
 #.  Click the Create button (far right)
 
+|imae001|
+
 #.  In the New SAML Resource window, enter the following values:
 
 	Name			 	partner-app
@@ -279,3 +281,19 @@ Kerberos AAA Object
 #. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
+
+.. |image001| image:: media/lab3/image001.png
+   :width: 4.93in
+   :height: 3.08in
+.. |image002| image:: media/lab3/image002.png
+.. |image003| image:: media/lab3/image003.png
+.. |image004| image:: media/lab3/image004.png
+.. |image005| image:: media/lab3/image005.png
+.. |image006| image:: media/lab3/image006.png
+.. |image007| image:: media/lab3/image007.png
+.. |image008| image:: media/lab3/image008.png
+.. |image009| image:: media/lab3/image009.png
+.. |image010| image:: media/lab3/image010.png
+.. |image011| image:: media/lab3/image011.png
+.. |image012| image:: media/lab3/image012.png
+.. |image021| image:: media/lab3/image021.png
