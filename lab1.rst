@@ -319,7 +319,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 7. Review your Access Report Logs (**Access -> Overview -> Access Reports**)                 |
 |                                                                                              |
-|     *Note: For further information on Active Sessions and Access Reports see Lab4*           |
+|..Note: For further information on Active Sessions and Access Reports see Lab4*               |
 +----------------------------------------------------------------------------------------------+
 | |image021|                                                                                   |
 +----------------------------------------------------------------------------------------------+
