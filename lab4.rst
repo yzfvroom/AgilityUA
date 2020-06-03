@@ -156,88 +156,60 @@ Task 3: Troubleshooting in the CLI
 | 4. run command **ntpq -pn**                                                                  |
 |     - ensure NTP is properly configured                                                      |
 |                                                                                              |
-| 5. run commmand **date**                                                                     |
+| 5. run command **date**                                                                      |
 |     = If time is out of sync by too much of an offset this can cause issues with sync in an  |
 |       HA pair of devices                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |image011|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
+Task 4: Managing Active Sessions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Is the AAA server reachable over the network? Ensure no Firewalls are blocking network ports/protocols.
++----------------------------------------------------------------------------------------------+
+| 1. In Chrome go to https://app.acme.com                                                      |
+|     - Login  user1/user1                                                                     |
+|                                                                                              |
+| 2. Return to your BIG-IP GUI by clicking the app shortcut BIG-IP1 from Chrome                |
+|     = Login admin\admin                                                                      |
+|     - Go to **Access -> Overview -> Active Sessions**                                        |
+|         - Do you see active sessions?  Are there in active sessions?                         |
+|         - Check the box next to your all the sessions and **Kill Selected Session**          |
++----------------------------------------------------------------------------------------------+
+| |image012|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-**Managing Sessions within the Access Policy Manager menu**
-
-We use the Manage Sessions menu to view general status of currently logged in sessions,
-view their progress through a policy, and to kill sessions when needed.
-
-Open a USER session to APM through a new browser window by navigating to a Virtual Server such as http://server2.acme.com
-
-- Did you receive an error message? If so, take note of the Session Reference Number
-
-- In the browser window, you are using to manage the BIG-IP, navigate to Access  Overview > Active Sessions menu.
-
-- Review the Manage Sessions screen, is there an Active Session? If not then why?
-
-
-Task 2 - Message Box
-----------------------
-
-You can log BIG-IP APM session variables by configuring a message box action to display the sessionid variable.
-
-The sessionid is one of the session variables that can be displayed using a message box event.   To do so
-perform the following procedure:
-
-#.  Log into the BIG-IP Configuration utility
-
-#.  Navigate to Access Profiles
-
-#.  Edit an Access Profiles
-
-At the point in the Access Policy where you want to insert the message box, click the plus sign (+) to add
-an action.
-
-#.  Select the Message Box action
-
-#.  Click Add Item
-
-#.  In the Name box type a name for the action.  For example:   Display session ID
-
-#.  In the Language menu, select language or leave it set to the default language
-
-#.  In the Message box, enter a message to display the session variables.
-For example:
-
-	Your session ID is %{session.user.sessionid}
-	Your user name is %{session.logon.last.username}
-
-|image10|
-
-Task 2 - APM Logging
-----------------------
+Task 5: APM Logging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Checking APM Logs**
 
-APM Logs by default show the same information you can get from the Manage Sessions menu, as well as APM module-specific information.
-Access Policy Manager uses syslog-ng to log events. The syslog-ng utility is an enhanced version of the standard logging utility syslog.
-APM log messages are stored in the following file locations:  /var/log/access, /var/log/audit
+APM Logs by default show the same information you can get from the Active Sessions menu, as well
+as APM module-specific information.  Access Policy Manager uses syslog-ng to log events. The syslog-ng
+utility is an enhanced version of the standard logging utility syslog.  APM log messages are stored in
+the following file locations:  /var/log/access, /var/log/audit
 
-When setting up logging you can customize the logs by designating the desired minimum severity level or log level that you want the system to report when a type of event occurs. The minimum log level indicates the minimum severity level at which the system logs that type of event.
+When setting up logging you can customize the logs by designating the desired minimum severity level
+or log level that you want the system to report when a type of event occurs. The minimum log level indicates
+the minimum severity level at which the system logs that type of event.
 
-Note:  Files are rotated daily if their file size exceeds 10MB.  Additionally, weekly rotations are enforced if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.  The default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Variables. Setting the access policy log level to Informational or Debug will cause the BIG-IP APM system to log Session Variables, but it will also add additional system overhead.
+Note:  Files are rotated daily if their file size exceeds 10MB.  Additionally, weekly rotations are enforced
+if the rotated log file is a week old, regardless whether or not the file exceeds the 10MB threshold.  The
+default log level for the BIG-IP APM access policy log is Notice, which does *not* log Session Variables.
+Setting the access policy log level to Informational or Debug will cause the BIG-IP APM system to log Session
+Variables, but it will also add additional system overhead.
 
-If you need to log Session Variables on a production system, F5 recommends setting the access policy log level to Debug temporarily
-while performing troubleshooting or debugging access related issues.
+If you need to log Session Variables on a production system, F5 recommends setting the access policy log
+level to Debug temporarily while performing troubleshooting or debugging access related issues.
 
-Task 3 - SAML Tracer
-----------------------
+Task 5: SAML Tracer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Overview
 
 SAML Tracer is a browser plugin debugger for viewing SAML messages and can be leveraged
-for viewing SAML and WS-Federation messages sent through a browser durng Single Sign-On and logout.
-It is an essential tool for SAML debuging and is used extensively by SAML developers when analyzing
+for viewing SAML and WS-Federation messages sent through a browser during Single Sign-On and logout.
+It is an essential tool for SAML debugging and is used extensively by SAML developers when analyzing
 Authentication Requests and Responses during a SAML login process.   SAML Tracer is a browser Add-On
 and is supported on Google Chrome and Firefox.    For this lab the SAML Tracer has already been
 enabled within Google Chrome and students will launch SAML Tracer while simultaneously logging into
@@ -246,24 +218,26 @@ the server3.acme.com SAML enabled application.
 
 #.  Establish an RDP connection to your Jump Host
 
-#.  Lauch Google Chrome
+#.  Launch Google Chrome
 
 #.  On the top right menu bar click on the SAML Tracer object which will launch SAML Tracer
 
-#.  Within Chrome type in https://sp.acme.com
+#.  Within Chrome type in https://app.acme.com
 
-#.  It may help to minize Chrome and move the SAML Tracer utility to the right side of Chrome
-	in order to view the SAML request/response actions
+#.  It may help to minimize Chrome and move the SAML Tracer utility to the right side of Chrome
+	  in order to view the SAML request/response actions
 
-#.  Log in to https://sp.acme.com as as user1/user1
+#.  Log in to https://app.acme.com as user1/user1
 
 #.  Within the SAML Tracer utility you should see a number of GET and POST responses
 
 #.  Click on one of the GET requests within SAML Tracer and displayed below will be the
-	details of the request. In general GET calls will display the request an application
-	is sending to the IdP.   A POST call is often useful to display details such as whether
-	or not an X509 certificate is correct, but can be useful to display any number of variables
-	depending on whether the call is SP-Initiated or IdP-Initiated.
+	  details of the request. In general GET calls will display the request an application
+	  is sending to the IdP.   A POST call is often useful to display details such as whether
+  	or not an X509 certificate is correct, but can be useful to display any number of variables
+	  depending on whether the call is SP-Initiated or IdP-Initiated.
+
+ |image014|
 
 Task 4 - F5 tcpdump and Wireshark
 ----------------------
@@ -355,47 +329,21 @@ and display the application data traffic.
 **This concludes Lab #4 basic troubleshooting steps and utilities**
 
 .. |image001| image:: media/Lab4/image001.png
-   :width: 4.5in
-   :height: 0.74in
 .. |image002| image:: media/Lab4/image002.png
-   :width: 4.5in
-   :height: 3.37in
 .. |image003| image:: media/Lab4/image003.png
-   :width: 4.5in
-   :height: 3.38in
 .. |image004| image:: media/Lab4/image004.png
-   :width: 4.5in
-   :height: 0.73in
 .. |image005| image:: media/Lab4/image005.png
-   :width: 4.5in
-   :height: 3.37in
 .. |image006| image:: media/Lab4/image006.png
-   :width: 4.5in
-   :height: 1.15in
 .. |image007| image:: media/Lab4/image007.png
-   :width: 4.5in
-   :height: 2.28in
 .. |image008| image:: media/Lab4/image008.png
-   :width: 4.5in
-   :height: 0.96in
 .. |image009| image:: media/Lab4/image009.png
-   :width: 4.5in
-   :height: 1.69in
 .. |image010| image:: media/Lab4/image010.png
-   :width: 4.5in
-   :height: 2.94in
 .. |image011| image:: media/Lab4/image011.png
-   :width: 4.5in
-   :height: 0.80in
 .. |image012| image:: media/Lab4/image012.png
-   :width: 4.5in
-   :height: 1.12in
 .. |image013| image:: media/Lab4/image013.png
-   :width: 4.5in
-   :height: 4.00in
 .. |image014| image:: media/Lab4/image014.png
-   :width: 4.5in
-   :height: 1.48in
+   :width: 4.06in
+   :height: 3.08in
 .. |image015| image:: media/Lab4/image015.png
    :width: 4.5in
    :height: 1.12in
