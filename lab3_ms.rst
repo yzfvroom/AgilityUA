@@ -43,7 +43,7 @@ SAML Resource
 
 #.  Click the Create button (far right)
 
-|imae001|
+|image001|
 
 #.  In the New SAML Resource window, enter the following values:
 
