@@ -74,12 +74,11 @@ TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keyta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#. During this exercise we will make a copy of the idp.acme.com-policy and modify
-   it to demonstrate Kerberos to SAML functionality.  Navigate to Access, Profiles, Access Profiles
-   and click on the Copy link to the far right of the idp.acme.com-policy.   Name the policy Kerberos_SAML.
+During this exercise we will make a copy of the idp.acme.com-policy and modify
+it to demonstrate Kerberos to SAML functionality.  Navigate to Access, Profiles, Access Profiles
+and click on the Copy link to the far right of the **idp.acme.com-policy**.   Name the policy **Kerberos_SAML**
    
-
-#. From the Jump Host open a command prompt and type "mmc".   This will launch the Active Directory Management 
+From the Jump Host open a command prompt and type "mmc".   This will launch the Active Directory Management 
 console.   Click on Active Directory Users and Computers.
 
 
