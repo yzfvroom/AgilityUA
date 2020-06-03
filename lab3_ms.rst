@@ -32,7 +32,7 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-TASK 1: Create a SAML Resource, Webtop, Kerberos AAA Object, and SAML to Kerberos Access Policy
+TASK 1: Create an SSO object and Webtop Resource
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ______________________________________________________________
