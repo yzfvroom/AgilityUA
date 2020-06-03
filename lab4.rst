@@ -54,7 +54,7 @@ is not successfully allowing access or not performing as intended.
 |                                                                                              |
 |**Now it is time to check on our Sessions under Active Sessions Menu**                        |
 |                                                                                              |
-|1. Go to **Access -> Overview -> Active Sessions**                                            |
+| 1. Go to **Access -> Overview -> Active Sessions**                                           |
 |                                                                                              |
 |   *Note:  There may not be active sessions within lab proceed to step 2 to generate a        |
 |           session and examine the properties*                                                |
@@ -63,35 +63,37 @@ is not successfully allowing access or not performing as intended.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-|2. Open Chrome and go to **https://app.acme.com**                                             |
+| 2. Open Chrome and go to **https://app.acme.com**                                            |
 |                                                                                              |
-|3. Enter your credentials **User1/User1**                                                     |
+| 3. Enter your credentials **User1/User1**                                                    |
 +----------------------------------------------------------------------------------------------+
 | |image002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-|4. Return to your BIG-IP **Access -> Overview -> Active Sessions**                            |
+| 4. Return to your BIG-IP **Access -> Overview -> Active Sessions**                           |
 |                                                                                              |
-|5. Under Auto Refresh you can choose to Refresh or set how frequently to Auto Refresh         |
+| 5. Under Auto Refresh you can choose to Refresh or set how frequently to Auto Refresh        |
 +----------------------------------------------------------------------------------------------+
 | |image003|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-|   - What can we see from the Manage Session Menu?                                            |
+|   - What can we see from the Active Session tab?                                             |
 |                                                                                              |
 |   - If we click the Session ID link what more information is available?                      |
 |                                                                                              |
 |   - Is Authentication Successful or is it Failing?                                           |
 |                                                                                              |
 |   - Is the user receiving the proper ENDING ALLOW from the Policy?                           |
+|                                                                                              |
+|   - Try logging in with the wrong password.  What does the flow look like?                   |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-|6. Return to your BIG-IP **Access -> Overview -> Access Reports**                             |
+| 6. Return to your BIG-IP **Access -> Overview -> Access Reports**                            |
 |                                                                                              |
-|7. You can choose the amount of time you want to look at from here for the lab we will look   |
+| 7. You can choose the amount of time you want to look at from here for the lab we will look  |
 |    at the last 1 hour                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |image004|                                                                                   |
@@ -100,19 +102,45 @@ is not successfully allowing access or not performing as intended.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-|8. Let's review the reports information for the sessions                                      |
+| 8. Let's review the reports information for the sessions                                     |
 |                                                                                              |
-|7. Pick a Session ID (your numbers will be different than the picture below)                  |
+| 7. Pick a Session ID (your numbers will be different than the picture below)                 |
 +----------------------------------------------------------------------------------------------+
 | |image006|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
-# Time to Review the Reports information for the Session in question
++----------------------------------------------------------------------------------------------+
+|   - What information is available from the ALL SESSIONS REPORT?                              |
+|                                                                                              |
+|   - What information can we see when you click on a Session ID?                              |
+|                                                                                              |
+|   - Can we review the Session Variables for the user’s session from the ALL SESSION          |
+|     REPORT? If YES then Why however If NO then WHY?                                          |
++----------------------------------------------------------------------------------------------+
 
-    - What information is available from the ALL SESSIONS REPORT?
-    - Can we review the Session Variables for the user’s session from the ALL SESSION REPORT? If YES then Why however If NO then WHY?
+Task 3: Troubleshooting in the CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image13|
++----------------------------------------------------------------------------------------------+
+|*Let's verify our routing on BIG-IP*                                                          |
+|                                                                                              |
+| 1. Locate the PuTTY (SSH Client) to access the BIG-IP                                        |
+|                                                                                              |
+| 2. Double click the BIG-IP1 PuTTY icon on the Desktop                                        |
++----------------------------------------------------------------------------------------------+
+| |image007|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. run the command **netstat -rn**                                                           |
+|     - What routes do we have?                                                                |
+|     - How would the BIG-IP reach 10.1.20.6?                                                  |
+|     = run **ip route get 10.1.20.6** to see if you were right                                |
++----------------------------------------------------------------------------------------------+
+| |image008|                                                                                   |
+|                                                                                              |
+| |image009|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
 Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
