@@ -69,6 +69,12 @@ Webtop
 
 	Name	full_webtop
 	Type	Full (drop down)
+	
+.. image:: media/Lab3/image002.jpg
+   :width: 4.06in
+   :height: 3.08in 
+	
+	
 
 Click finished at the bottom of the GUI
 
