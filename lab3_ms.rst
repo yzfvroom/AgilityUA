@@ -91,7 +91,7 @@ console.   Click on Active Directory Users and Computers.
 #. The next step is the run the ktpass command from the Windows command line as follows below
 
 
-**ktpass /princ HTTP/kerberos.f5lab@ACME.COM /mapuser f5lab\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out c:\file.keytab**
+**ktpass /princ HTTP/kerberos.f5lab@ACME.COM /mapuser f5lab\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out "c:\file.keytab"**
 
 
 #. Configure a Kerberos AAA Object 
