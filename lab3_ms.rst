@@ -32,8 +32,8 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
-Access Policy**
+TASK 1: Create a SAML Resource, Webtop, Kerberos AAA Object, and SAML to Kerberos Access Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ______________________________________________________________
 
