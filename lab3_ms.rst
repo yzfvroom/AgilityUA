@@ -67,7 +67,7 @@ Webtop
 Click finished at the bottom of the GUI
 
 
-## TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
+**TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. During this exercise we will make a copy of the idp.acme.com-policy and modify
