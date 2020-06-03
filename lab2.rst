@@ -74,8 +74,8 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **Accept Languages**: **English (en)**                                                 |
 |                                                                                              |
-|    *Note: You will need a per session policy and a per request policy but we will be         |
-|           leaving the per session policy blank and performing our auth in per Request*       |
+| *Note: You will need a per session policy and a per request policy but we will be*           |
+|        *leaving the per session policy blank and performing our auth in per Request*         |
 +----------------------------------------------------------------------------------------------+
 | |image002|                                                                                   |
 +----------------------------------------------------------------------------------------------+
