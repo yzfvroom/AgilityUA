@@ -85,7 +85,7 @@ console.   Click on Active Directory Users and Computers.
 #. Create a new user in Active Directory with the follow attributes:
 
 
-#. The Active Directory account shold be name "kerbsso".  
+#. The Active Directory account should be name "kerbsso".  
 
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
@@ -249,6 +249,12 @@ ______________________________________________________________
 
 #. In the **Visual Policy Editor**, click **Apply Access Policy**
    (top left), and close the **Visual Policy Editor**
+
+#. The final step in this lab is the apply the **Kerberos_SAML** policy to the idp.acme.com Virtual Server
+
+#. Within the GUI navigate to Local Traffic, Virtual Servers, and click on the idp.acme.com Virtual Server
+
+#. Scroll down to the Access Policy section and select the **Kerberos_SAML** Access Policy and click the update button at the bottom of the page.
 
 
 TASK 4 - Test the Kerberos to SAML Configuration
