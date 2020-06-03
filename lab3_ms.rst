@@ -1,4 +1,4 @@
-Lab 2: SSO Lab
+Lab 3: SSO Lab
 ===========================
 
 The purpose of this lab is to demonstrate Single Sign-On capabilities
