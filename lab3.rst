@@ -143,15 +143,6 @@ TASK 3: Copy and Modify the idp.acme.com-policy Access Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#. We will now make a copy of an existing Access Policy and modify the new policy
-
-
-#. Navigate to Access, Profiles, Per-Session Profile and click on the **copy** link to the right of the idp.acme.com-policy
-
-
-#. Name the new policy **Kerberos_SAML**
-
-
 #. Navigate to Access, Profiles, Per-Session Profiles and Edit the **Kerberos_SAML** Access Profile
 
 
