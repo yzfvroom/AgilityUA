@@ -53,7 +53,10 @@ SAML Resource
 
 	Caption				partner-app
 
-
+.. image:: media/Lab3/image001.png
+   :width: 4.06in
+   :height: 3.08in 
+   
 Click Finished at the bottom of the configuration window
 
 Webtop
