@@ -1,262 +1,269 @@
-Lab 2: SSO Lab
-===========================
+Lab 3: APM Per Request Policies
+==========================================
 
-The purpose of this lab is to demonstrate Single Sign-On capabilities
-of APM.    The SSO Credential Mapping action enables users to forward
-stored user names and passwords to applications and servers automatically,
-without having to input credentials repeatedly.   This allows single
-sign-on (SSO) functionality for secure user access.  As different applications
-and resources support different authentication mechanisms, the SSO system
-may be required to store and translate credentials that differ from the
-user name and password a user inputs on the logon page.  The SSO credential
-mapping action allows for credentials to be retrieved from the logon
-page, or in another way for both the user name and the password.
+.. toctree::
+   :maxdepth: 1
+   :glob:
 
-This lab will demonstrate one SSO method, although a number of different SSO
-methods exist.  This lab will demonstrate the Kerberos to SAML method.
+The purpose of this lab is to familiarize the Student with Per Request Policies.
+The F5 Access Policy Manager (APM) provides two types of policies.
+
+Access Policy - The access policy runs when a client initiates a session.   Depending
+on the actions you include in the access policy, it can authenticate the user
+and perform group or class queries to populate session variables with data for
+use throughout the session.
+
+Per-Request Policy - After a session starts, a per-request policy runs each time
+the client makes an HTTP or HTTPS request.  A per-request policy can include a
+subroutine, which starts a subsession.  Multiple subsessions can exist at one
+time. One access policy and one per-request are specified within a virtual server.
+
+**It's important to note that APM first executes a per-session policy when a client
+attempts to connect to a resource.   After the session starts then a per-request
+policy runs on each HTTP/HTTPS request.  Per-Request policies can be utilized in a
+number of different scenarios; however, in the interest of time this lab will only
+demonstrate one method of leveraging Per-Request policies**
+
+This lab will only focus on configuring Per-Request policies for controlling access
+to external URL categories.
+
 
 Objective:
+----------
 
--  Gain an understanding of SSO Token User Name Caching and SSO Token Password
-   Caching.
+-  Gain an understanding of Per Request policies
 
--  Gain an understanding of the Kerberos to SAML relationship and its
-   component parts.
+-  Gain an understanding of use for Per Request Policy
 
--  Develop an awareness of the different deployment models that Kerberos
-   to SAML authentication opens up
 
 Lab Requirements:
+-----------------
 
--  All Lab requirements will be noted in the tasks that follow
+-  All lab requirements will be noted in the tasks that follow
 
 Estimated completion time: 15 minutes
 
-**TASK 1 – Create SAML Resource, Webtop, and SAML IdP
-Access Policy**
+Lab 3 Tasks:
+-----------------
 
-______________________________________________________________
-
-SAML Resource
-
-#.  Being by selecting Access > Federation > SAML Resources
-
-#.  Click the Create button (far right)
-
-#.  In the New SAML Resource window, enter the following values:
-
-	Name			 	partner-app
-
-	SSO Configuration	prebuilt-idp.acme.com
-
-	Caption				partner-app
-
-Click Finished at the bottom of the configuration window
-
-Webtop
-
-#.	Select Access > Webtops > Webtop List
-
-#.	Click Create button (far right)
-
-#.	In the resulting window, enter the following values
-
-	Name	full_webtop
-	Type	Full (drop down)
-
-Click finished at the bottom of the GUI
-
-
-## TASK 2 – Modify the SAML Identity Provider (IdP) Access Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Using the existing Access Policy (pre-built-idp.acme.com) and navigate to **Access ‑>
-   Profiles/Policies ‑> Access Profiles (Per-Session Policies)**, and click
-   the **Edit** link next to the previously created *pre-built-idp.acme.com*
-
-
-
-#. Delete the **Logon Page** object by clicking on the **X** as shown
-
-
-
-#. In the resulting **Item Deletion Confirmation** dialog, ensure that the
-   previous node is connect to the **fallback** branch, and click the
-   **Delete** button
-
-
-
-#. In the **Visual Policy Editor** window for ``/Common/pre-built-idp.acme.com access policy``,
-   click the **Plus (+) Sign** between **Start** and **AD Auth**
-
-
-
-#. In the pop-up dialog box, select the **Logon** tab and then select the
-   **Radio** next to **HTTP 401 Response**, and click the **Add Item** button
-
-
-
-#. In the **HTTP 401 Response** dialog box, enter the following information:
-
-   +-------------------+---------------------------------+
-   | Basic Auth Realm: | ``f5lab.local``                  |
-   +-------------------+---------------------------------+
-   | HTTP Auth Level:  | ``basic+negotiate`` (drop down) |
-   +-------------------+---------------------------------+
-
-#. Click the **Save** button at the bottom of the dialog box
-
-
-
-#. In the **Visual Policy Editor** window for ``/Common/pre-built-idp.acme.com policy``,
-   click the **Plus (+) Sign** on the **Negotiate** branch between
-   **HTTP 401 Response** and **Deny**
-
-#. In the pop-up dialog box, select the **Authentication** tab and then
-   select the **Radio** next to **Kerberos Auth**, and click the
-   **Add Item** button
-
-
-
-#. In the **Kerberos Auth** dialog box, enter the following information:
-
-   +----------------------+-------------------------------------+
-   | AAA Server:          | ``/Common/apm-krb-aaa`` (drop down) |
-   +----------------------+-------------------------------------+
-   | Request Based Auth:  | ``Disabled`` (drop down)            |
-   +----------------------+-------------------------------------+
-
-#. Click the **Save** button at the bottom of the dialog box
-
-
-   .. NOTE:: The *apm-krb-aaa* object was pre-created for you in this lab.
-      More details on the configuration of Kerberos AAA are included in
-      the Learn More section at the end of this guide.
-
-#. In the **Visual Policy Editor** window for
-   ``/Common/pre-built-idp.acme.com policy``, click the **Plus (+) Sign** on the
-   **Successful** branch between **Kerberos Auth** and **Deny**
-
-
-
-#. In the pop-up dialog box, select the **Authentication** tab and then
-   select the **Radio** next to **AD Query**, and click the **Add Item** button
-
-
-
-#. In the resulting **AD Query(1)** pop-up window, select
-   ``/Commmon/prebuilt-ad-servers`` from the **Server** drop down menu
-
-#. In the **SearchFilter** field, enter the following value:
-   ``userPrincipalName=%{session.logon.last.username}``
-
-
-
-#. In the **AD Query(1)** window, click the **Branch Rules** tab
-
-#. Change the **Name** of the branch to *Successful*.
-
-#. Click the **Change** link next to the **Expression**
-
-
-
-#. In the resulting pop-up window, delete the existing expression by clicking
-   the **X** as shown
-
-
-
-#. Create a new **Simple** expression by clicking the **Add Expression** button
-
-
-
-#. In the resulting menu, select the following from the drop down menus:
-
-   +------------+---------------------+
-   | Agent Sel: | ``AD Query``        |
-   +------------+---------------------+
-   | Condition: | ``AD Query Passed`` |
-   +------------+---------------------+
-
-#. Click the **Add Expression** Button
-
-
-
-#. Click the **Finished** button to complete the expression
-
-
-
-#. Click the **Save** button to complete the **AD Query**
-
-
-
-#. In the **Visual Policy Editor** window for ``/Common/pre-built-idp.acme.com policy``,
-   click the **Plus (+) Sign** on the **Successful** branch between
-   **AD Query(1)** and **Deny**
-
-#. In the pop-up dialog box, select the **Assignment** tab and then select
-   the **Radio** next to **Advanced Resource Assign**, and click the
-   **Add Item** button
-
-
-
-#. In the resulting **Advanced Resource Assign(1)** pop-up window, click
-   the **Add New Entry** button
-
-#. In the new Resource Assignment entry, click the **Add/Delete** link
-
-
-
-#. In the resulting pop-up window, click the **SAML** tab, and select the
-   **Checkbox** next to */Common/partner-app*
-
-
-
-#. Click the **Webtop** tab, and select the **Checkbox** next to
-   ``/Common/full_webtop``
-
-
-
-#. Click the **Update** button at the bottom of the window to complete
-   the Resource Assignment entry
-
-#. Click the **Save** button at the bottom of the
-   **Advanced Resource Assign(1)** window
-
-#. In the **Visual Policy Editor**, select the **Deny** ending on the
-   fallback branch following **Advanced Resource Assign**
-
-
-
-#. In the **Select Ending** dialog box, selet the **Allow** radio button
-   and then click **Save**
-
-
-
-#. In the **Visual Policy Editor**, click **Apply Access Policy**
-   (top left), and close the **Visual Policy Editor**
-
-
-
-## TASK 3 - Test the Kerberos to SAML Configuration
+TASK 1: Create Per Session Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. NOTE:: In the following Lab Task it is recommended that you use Microsoft
-   Internet Explorer.  While other browsers also support Kerberos
-   (if configured), for the purposes of this Lab Microsoft Internet
-   Explorer has been configured and will be used.
+Refer to the instructions and screen shots below:
 
-#. Using Internet Explorer from the jump host, navigate to the SAML IdP you
-   previously configured at *idp.acme.com* (or click the
-   provided bookmark)
++----------------------------------------------------------------------------------------------+
+| 1. Login to your lab provided **Virtual Edition BIG-IP**                                     |
+|     - On your jumphost launch Chrome and click the bigip1 link from the app shortcut menu    |
+|     - Login with credentials admin/admin                                                     |
+|                                                                                              |
+| 2. Begin by selecting: **Access -> Profiles/Policies -> Per Session Policies** ->            |
+|                                                                                              |
+| 3. Click the **Create** button (far right)                                                   |
++----------------------------------------------------------------------------------------------+
+| |image001|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 4. Enter the name of the policy, profile type, and profile scope                             |
+|                                                                                              |
+|    -  **Name**: **app.acme.com-PSP**                                                         |
+|                                                                                              |
+|    -  **Profile Type**: **All**                                                              |
+|                                                                                              |
+|    -  **Profile Scope**: **Profile**                                                         |
+|                                                                                              |
+|    -  **Accept Languages**: **English (en)**                                                 |
+|                                                                                              |
+|    *Note: You will need a per session policy and a per request policy but we will be         |
+|           leaving the per session policy blank and performing our auth in per Request*       |
++----------------------------------------------------------------------------------------------+
+| |image002|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 5. On the app.acme.com-PSP policy click **Edit**                                             |
+|                                                                                              |
+| 6. Click on the **Deny** and change the Select Ending to **Allow**                           |
+|                                                                                              |
+| 7. Click **Save**                                                                            |
+|                                                                                              |
+| 8. Click Apply policy                                                                        |
+|                                                                                              |
+|   *Note:  Nothing will be set in this policy we will simply establish a session and manage   |
+|           all the authentication in the Per-Request Policy*                                  |
++----------------------------------------------------------------------------------------------+
+| |image003|                                                                                   |
+|                                                                                              |
+| |image004|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. Were you prompted for credentials? Were you successfully authenticated?
-   Did you see the webtop with the SP application?
+TASK 2: Configure SAML Per Request Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click on the Partner App icon. Were you successfully authenticated
-   (via SAML) to the SP?
+Refer to the instructions and screen shots below:
 
-#. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
++----------------------------------------------------------------------------------------------+
+| In Lab 1 we created all the SAML SP objects and bound them to an IdP.  Now we will           |
+| leverage those objects to create our SAML Per-Request Policy                                 |
+|                                                                                              |
+| 1. Begin by selecting: **Access -> Profiles/Policies -> Per Request Policies** ->            |
+|                                                                                              |
+| 2. Click the **Create** button (far right)                                                   |
++----------------------------------------------------------------------------------------------+
+| |image005|                                                                                   |
++----------------------------------------------------------------------------------------------+
 
-#. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
++----------------------------------------------------------------------------------------------+
+| 3. Give the policy a name and select the Language Settings                                   |
+|                                                                                              |
+|    -  **Name**: **app.acme.com-PRP**                                                         |
+|                                                                                              |
+|    -  **Accept Languages**: **English (en)**                                                 |
++----------------------------------------------------------------------------------------------+
+| |image006|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. On the app.acme.com-PRP policy click **Edit**                                             |
+|                                                                                              |
+| 5. Click on **Add New Subroutine**                                                           |
+|                                                                                              |
+| 6. Give it a name and Click Save                                                             |
+|                                                                                              |
+|    -  **Name**: **SAML Auth**                                                                |
+|                                                                                              |
+| 7. Click the + between In and Out                                                            |
+|                                                                                              |
+| 8. Click the **Authentication** Tab                                                          |
+|                                                                                              |
+| 9. At the bottom of the list choose **SAML Auth** and click **Add Item**                     |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image007|                                                                                   |
+|                                                                                              |
+| |image008|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. Click on the **SAML Auth** box in the new Subroutine and select the AAA Server and Save  |
+|                                                                                              |
+|     -  **Name**: **/Common/app.acme.com**                                                    |
+|                                                                                              |
+|    *Note:  This object was created in Lab 1*                                                 |
+|                                                                                              |
+| 11. Click the **Edit Terminals** Button                                                      |
+|                                                                                              |
+| 12. Click *Add Terminal* in the new window                                                   |
+|                                                                                              |
+| 13. Name one terminal **Success** and the other **Failure**                                  |
+|                                                                                              |
+| 14. Change the order so that **Success** is on top and **Failure** is on the bottom          |
+|                                                                                              |
+| 15. Click on **Set Default** table and set **Failure** as the default, click Save            |
+|                                                                                              |
+| 16. Click the fallback box and change the terminal to **Failure**, click Save                |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image009|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 17. Click on the + between Start and Allow in the main policy                                |
+|                                                                                              |
+| 18. Click the Subroutine table                                                               |
+|                                                                                              |
+| 19. Choose SAML Auth                                                                         |
+|                                                                                              |
+| 20. Click **Add Item**                                                                       |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image010|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 21. Click on **Local Traffic -> Virtual Servers ** and choose the **app.acme.com**           |
+|                                                                                              |
+| 22. Scroll to the **Access Policy** section                                                  |
+|                                                                                              |
+| 23. From the drop down for **Access Profile** choose **app.acme.com-PSP**                    |
+|                                                                                              |
+| 24. For the drop down on **Per-Request Policy** choose **app.acme.com-PRP**                  |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image011|                                                                                   |
+|                                                                                              |
+| |image012|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 25. Open Chrome and go to **https://app.acme.com**                                           |
+|                                                                                              |
+| 26. Enter your credentials **User1/User1**                                                   |
+|                                                                                              |
++----------------------------------------------------------------------------------------------+
+| |image021|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
+.. |image001| image:: media/Lab3/image001.png
+   :width: 4.5in
+   :height: 0.74in
+.. |image002| image:: media/Lab3/image002.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image003| image:: media/Lab3/image003.png
+   :width: 4.5in
+   :height: 3.38in
+.. |image004| image:: media/Lab3/image004.png
+   :width: 4.5in
+   :height: 0.73in
+.. |image005| image:: media/Lab3/image005.png
+   :width: 4.5in
+   :height: 3.37in
+.. |image006| image:: media/Lab3/image006.png
+   :width: 4.5in
+   :height: 1.15in
+.. |image007| image:: media/Lab3/image007.png
+   :width: 4.5in
+   :height: 2.28in
+.. |image008| image:: media/Lab3/image008.png
+   :width: 4.5in
+   :height: 0.96in
+.. |image009| image:: media/Lab3/image009.png
+   :width: 4.5in
+   :height: 1.69in
+.. |image010| image:: media/Lab3/image010.png
+   :width: 4.5in
+   :height: 2.94in
+.. |image011| image:: media/Lab3/image011.png
+   :width: 4.5in
+   :height: 0.80in
+.. |image012| image:: media/Lab3/image012.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image013| image:: media/Lab3/image013.png
+   :width: 4.5in
+   :height: 4.00in
+.. |image014| image:: media/Lab3/image014.png
+   :width: 4.5in
+   :height: 1.48in
+.. |image015| image:: media/Lab3/image015.png
+   :width: 4.5in
+   :height: 1.12in
+.. |image016| image:: media/Lab3/image016.png
+   :width: 4.5in
+   :height: 1.54in
+.. |image017| image:: media/Lab3/image017.png
+   :width: 4.5in
+   :height: 1.29in
+.. |image018| image:: media/Lab3/image018.png
+   :width: 4.5in
+   :height: 5.46in
+.. |image019| image:: media/Lab3/image019.png
+   :width: 4.5in
+   :height: 2.13in
+.. |image020| image:: media/Lab3/image020.png
+   :width: 4.5in
+   :height: 1.01in
+.. |image021| image:: media/Lab3/image021.png
+   :width: 4.5in
+   :height: 1.93in
