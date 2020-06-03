@@ -95,6 +95,11 @@ console.   Click on Active Directory Users and Computers.
    :height: 3.08in 
 
 
+.. image:: media/Lab3/image101.png
+   :width: 4.06in
+   :height: 3.08in 
+
+
 #. The next step is the run the ktpass command from the Windows command line as follows below
 
 
