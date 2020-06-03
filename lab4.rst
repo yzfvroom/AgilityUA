@@ -142,6 +142,27 @@ Task 3: Troubleshooting in the CLI
 | |image009|                                                                                   |
 +----------------------------------------------------------------------------------------------+
 
++----------------------------------------------------------------------------------------------+
+| 4. run command **dig app.acme.com**                                                          |
+|     - What IP is returned?                                                                   |
+|     - Why that IP?                                                                           |
+|     = try **dig app.acme.com**                                                               |
+|     - **dig server1.acme.com**                                                               |
++----------------------------------------------------------------------------------------------+
+| |image010|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. run command **ntpq -pn**                                                                  |
+|     - ensure NTP is properly configured                                                      |
+|                                                                                              |
+| 5. run commmand **date**                                                                     |
+|     = If time is out of sync by too much of an offset this can cause issues with sync in an  |
+|       HA pair of devices                                                                     |
++----------------------------------------------------------------------------------------------+
+| |image011|                                                                                   |
++----------------------------------------------------------------------------------------------+
+
 Can the BIG-IP TMOS Resolve the AAA server by Hostname and by Hostname.Domain?
 
 Is the AAA server reachable over the network? Ensure no Firewalls are blocking network ports/protocols.
