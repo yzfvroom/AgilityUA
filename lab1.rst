@@ -266,7 +266,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **HTTP Profile:** **http** (drop down)                                                 |
 |                                                                                              |
-|    -  **SSL Profile (client):** **acme_wildcard**                                  |
+|    -  **SSL Profile (client):** **acme_wildcard**                                            |
 |                                                                                              |
 |    -  **Source Address Translation:**  **Auto Map**                                          |
 |                                                                                              |
@@ -278,7 +278,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 5. Scroll to the Resource section                                                            |
 |                                                                                              |
-|    -  **Default Pool**: **iis_pool**                                                   |
+|    -  **Default Pool**: **iis_pool**                                                         |
 |                                                                                              |
 | 6. Scroll to the bottom of the configuration window and click **Finished**                   |
 |                                                                                              |
