@@ -244,11 +244,11 @@ Task 4 - F5 tcpdump and Wireshark
 
 #.  This lab will cover the following topics:
 
-	- tcpdump switches and filters
-	- F5 specific tcpdump commands
-	- F5 Wireshark plugin
-	- Using the F5 Wireshark plugin
-	- ssldump command
+	   - tcpdump switches and filters
+	   - F5 specific tcpdump commands
+	   - F5 Wireshark plugin
+	   - Using the F5 Wireshark plugin
+	   - ssldump command
 
 **Using tcpdump switches and filters**
 
@@ -256,10 +256,10 @@ Task 4 - F5 tcpdump and Wireshark
 
 #.	The Jump Host has a shortcut link to Putty on the Desktop
 
-#.	Log into big-ip1.f5lab or the Management IP Address 10.1.1.4 as admin/admin
+#.	Log into BIG-IP1 or the Management IP Address 10.1.1.4 as admin/admin
 
 #.	The tcpdump command has several switches with different purposes, and this exercise
-	will cover the most commonly used switches:
+	  will cover the most commonly used switches:
 
 		- tcpdump -D  (this will list the available interfaces for packet captures
 
@@ -274,33 +274,34 @@ Task 4 - F5 tcpdump and Wireshark
 
 **Using the F5 Wireshark plugin**
 
-_ The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
+The F5 Wireshark plugin has already been installed and enabled within Wireshark on the Jumphost
 
-- Now let's use Wireshark along with the F5 plugin and take a packet capture from the BIG-IP
-
-#. Start Putty and log into big-ip1.f5lab or the Management IP Address 10.1.1.4 as admin/admin
+Now let's use Wireshark along with the F5 plugin and take a packet capture from the BIG-IP
 
 #. List the destination address of a virtual server on the F5 using the following command:
 
-#. tmsh list ltm virtual server3.acme.com destination
+#. tmsh list ltm virtual app.acme.com destination
 
-#. Now take the destination address and compose a tcpdump as follows:
+#. Now take the destination address and compose a tcpdump command and track traffic to app.acme.com
 
-#. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/server3.acme.com host 10.1.10.103
+#. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/app.acme.com.pcap host 10.1.10.100
 
-#. Now take the destination address and compose a tcpdump command and track traffic to server3.acme.com
-
-#. tcpdump -nni 0.0:nnn -s0 -w /var/tmp/server3.acme.com.pcap host 10.1.10.103
-
-#. After starting the capture start Chrome and type in https://server3.acme.com and login as user1/user1
+#. After starting the capture start Chrome and type in https://app.acme.com and login as user1/user1
 
 #. Stop the tcpdump by using Ctrl+c
 
-#. Now launch WinSCP and log into the big-ip1.f5lab or 10.1.1.4 and change the directory to /var/tmp
+#. Now launch WinSCP and log into 10.1.1.4 and change the directory to /var/tmp
 
-#. Copy the pcap to the jumpbox Desktop
+#. Locate app.acme.com.pcap
 
-#. Now launch Wireshark, and click File, Open, and select the server3.acme.com.pcap file
+#. Copy the pcap to the jumpbox Desktop by dragging and dropping the file from the left pane to the Desktop
+   folder on the right
+
+|image015|
+
+#. Now launch Wireshark, and click File, Open, and select the app.acme.com.pcap file (Or double click the file from the Desktop)
+
+#. Explore the packet capture.  Can you find your initial SYN?  Do you see when you are routed to the IdP?
 
 **ssldump command**
 
@@ -310,20 +311,21 @@ SSL/TLS traffic, it decodes the records and displays them in text to standard ou
 key that was used to encrypt the connections, the ssldump utility may also be able to decrypt the connections
 and display the application data traffic.
 
-- To begin this task let's use the /var/tmp/server3.acme.com.pcap capture
+- To begin this task let's use the /var/tmp/app.acme.com.pcap capture
 
 - SSL connections are established on top of existing TCP connections using an SSL handshake
 
-#. Launch a Putty session into big-ip1.f5lab or 10.1.1.4 and cd to /var/tmp
+#. Launch a Putty session into 10.1.1.4 and cd to /var/tmp
 
-#. Run the following command:  ssldump -nr server3.acme.com.pcap
+#. Run the following command:  ssldump -nr app.acme.com.pcap
 
 #. The SSL/TLS records printed by the ssldump utility should display the TCP connection, as well as SSL records
-	sent between the client and the server.   The output of each SSL record begins with a record line.   It contains
-	the connection number with which the record is associated as well as the sequence number of the record followed
-	by two timestamps.   The first timestamp is the time in seconds since the start of the connection,  The seconds
-	timestamp is the time in seconds since the previous record on the same connection.  By default the ssldump
-	utility decodes and displays usefule details of some SSL record messages.
+	 sent between the client and the server.   The output of each SSL record begins with a record line.   It contains
+	 the connection number with which the record is associated as well as the sequence number of the record followed
+	 by two timestamps.   The first timestamp is the time in seconds since the start of the connection,  The seconds
+	 timestamp is the time in seconds since the previous record on the same connection.  By default the ssldump
+	 utility decodes and displays useful details of some SSL record messages.
+ 
 
 
 **This concludes Lab #4 basic troubleshooting steps and utilities**
@@ -345,8 +347,8 @@ and display the application data traffic.
    :width: 4.06in
    :height: 3.08in
 .. |image015| image:: media/Lab4/image015.png
-   :width: 4.5in
-   :height: 1.12in
+   :width: 5.56in
+   :height: 3.57in
 .. |image016| image:: media/Lab4/image016.png
    :width: 4.5in
    :height: 1.54in
