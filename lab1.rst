@@ -266,7 +266,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 |    -  **HTTP Profile:** **http** (drop down)                                                 |
 |                                                                                              |
-|    -  **SSL Profile (client):** **acme_wildcard-clientssl**                                  |
+|    -  **SSL Profile (client):** **acme_wildcard**                                  |
 |                                                                                              |
 |    -  **Source Address Translation:**  **Auto Map**                                          |
 |                                                                                              |
@@ -278,7 +278,7 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 5. Scroll to the Resource section                                                            |
 |                                                                                              |
-|    -  **Default Pool**: **iis_pool\_pool**                                                   |
+|    -  **Default Pool**: **iis_pool**                                                   |
 |                                                                                              |
 | 6. Scroll to the bottom of the configuration window and click **Finished**                   |
 |                                                                                              |
@@ -315,9 +315,11 @@ Refer to the instructions and screen shots below:
 |                                                                                              |
 | 5. Were you successfully authenticated (SAML)?                                               |
 |                                                                                              |
-| 6. Review your **Active Sessions** (**Access Overview** -> **Active Sessions**)              |
+| 6. Review your **Active Sessions** (**Access -> Overview -> Active Sessions**)               |
 |                                                                                              |
-| 7. Review your Access Report Logs (**Access** -> **Overview Access Reports**)                |
+| 7. Review your Access Report Logs (**Access -> Overview -> Access Reports**)                 |
+|                                                                                              |
+|   *Note: For further information on Active Sessions and Access Reports see Lab4*             |
 +----------------------------------------------------------------------------------------------+
 | |image021|                                                                                   |
 +----------------------------------------------------------------------------------------------+
