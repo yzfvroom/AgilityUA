@@ -71,10 +71,17 @@ Webtop
 	Type	Full (drop down)
 	
 	
+	
+
 
 .. image:: media/Lab3/image005.jpg
    :width: 4.06in
    :height: 3.08in 
+
+
+
+
+
 
 	
 .. image:: media/Lab3/image002.jpg
