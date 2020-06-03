@@ -43,8 +43,6 @@ SAML Resource
 
 #.  Click the Create button (far right)
 
-|image001|
-
 #.  In the New SAML Resource window, enter the following values:
 
 	Name			 	partner-app
