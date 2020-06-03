@@ -198,7 +198,6 @@ Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
 | 7. In the **Visual Policy Editor** window for the **/Common/app.acme.com-policy**, click     |
-|                                                                                              |
 |    the **Plus (+) Sign** between **Start** and **Deny**.                                     |
 |                                                                                              |
 | 8. In the pop-up dialogue box select the **Authentication** tab and then click the **Radio** |
@@ -222,12 +221,10 @@ Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
 | 11. In the **Visual Policy Editor** select the **Deny** along the **Successful** branch      |
-|                                                                                              |
-|    following the **SAML Auth**                                                               |
+|     following the **SAML Auth**                                                              |
 |                                                                                              |
 | 12. From the **Select Ending** dialogue box select the **Allow Radio Button** and then       |
-|                                                                                              |
-|    click **Save**.                                                                           |
+|     click **Save**.                                                                          |
 +----------------------------------------------------------------------------------------------+
 | |image015|                                                                                   |
 +----------------------------------------------------------------------------------------------+
@@ -235,7 +232,7 @@ Refer to the instructions and screen shots below:
 +----------------------------------------------------------------------------------------------+
 | 13. In the **Visual Policy Editor** click the **Apply Access Policy** (top left) and close   |
 |                                                                                              |
-|     the **Visual Policy Editor**.                                                             |
+|     the **Visual Policy Editor**.                                                            |
 |                                                                                              |
 | *Note: Additional actions can be taken in the Per Session policy (Access Policy). The lab*   |
 |                                                                                              |
