@@ -231,7 +231,6 @@ Refer to the instructions and screen shots below:
 
 +----------------------------------------------------------------------------------------------+
 | 13. In the **Visual Policy Editor** click the **Apply Access Policy** (top left) and close   |
-|                                                                                              |
 |     the **Visual Policy Editor**.                                                            |
 |                                                                                              |
 | *Note: Additional actions can be taken in the Per Session policy (Access Policy). The lab*   |
