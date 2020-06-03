@@ -89,11 +89,12 @@ During this exercise we will make a copy of the idp.acme.com-policy and modify
 it to demonstrate Kerberos to SAML functionality.  Navigate to Access, Profiles, Access Profiles
 and click on the Copy link to the far right of the **idp.acme.com-policy**.   Name the policy **Kerberos_SAML**
 
-From the Jump Host open a command prompt and type "mmc".   This will launch the Active Directory Management
-console.   Click on Active Directory Users and Computers.
+From the Jump Host open a command prompt and type "mmc", then click File, click Add/Remove Snap-In, click on Active Directory
+Users and Computer, click the Add button, and click OK.  This will launch the Active Directory Management
+console.   Now click on the right arrow next to Active Directory Users and Computers, then click on the **f5lab.local** Active
+Directory Domain.  Right click the **f5lab.local** and drop down menu will display.  Click on New User.
 
-
-#. Create a new user in Active Directory with the follow attributes:
+#. Create a new Active Directory User Account with the follow attributes:
 
 
 #. The Active Directory account should be name "kerbsso".
