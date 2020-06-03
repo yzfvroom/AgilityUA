@@ -79,14 +79,14 @@ ______________________________________________________________
    and click on the Copy link to the far right of the idp.acme.com-policy.   Name the policy Kerberos_SAML.
    
 
-#.  From the Jump Host open a command prompt and type "mmc".   This will launch the Active Directory Management 
+#. From the Jump Host open a command prompt and type "mmc".   This will launch the Active Directory Management 
 console.   Click on Active Directory Users and Computers.
 
 
-#.  Create a new user in Active Directory with the follow attributes:
+#. Create a new user in Active Directory with the follow attributes:
 
 
-#  The Active Directory account shold be name "kerbsso".  
+#. The Active Directory account shold be name "kerbsso".  
 
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
@@ -101,7 +101,7 @@ console.   Click on Active Directory Users and Computers.
 #. Create the AAA object by navigating to **Access, Authentication, Kerberos
 
 
-# Specify a **Name** (AD Domain)
+#. Specify a **Name** (AD Domain)
 
 
 #. Specify the **Auth Realm** (Active Directory Domain)
@@ -120,16 +120,16 @@ TASK 3: Copy and Modify the idp.acme.com-policy Access Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#.  We will now make a copy of an existing Access Policy and modify the new policy
+#. We will now make a copy of an existing Access Policy and modify the new policy
 
 
-#.  Navigate to Access, Profiles, Per-Session Profile and click on the **copy** link to the right of the idp.acme.com-policy
+#. Navigate to Access, Profiles, Per-Session Profile and click on the **copy** link to the right of the idp.acme.com-policy
 
 
-#   Name the new policy **Kerberos_SAML**
+#. Name the new policy **Kerberos_SAML**
 
 
-#.  Navigate to Access, Profiles, Per-Session Profiles and Edit the **Kerberos_SAML** Access Profile
+#. Navigate to Access, Profiles, Per-Session Profiles and Edit the **Kerberos_SAML** Access Profile
 
 
 #. Delete the **Logon Page** object by clicking on the **X** as shown
