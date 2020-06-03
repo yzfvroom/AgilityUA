@@ -284,7 +284,7 @@ Kerberos AAA Object
 
 .. |image001| image:: media/lab3/image001.png
    :width: 4.93in
-   :height: 3.08in
+   :height: 2.7in
 .. |image002| image:: media/lab3/image002.png
 .. |image003| image:: media/lab3/image003.png
 .. |image004| image:: media/lab3/image004.png
