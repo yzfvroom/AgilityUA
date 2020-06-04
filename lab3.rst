@@ -115,12 +115,9 @@ ______________________________________________________________
 **Click on the delegation tab of the new Active Directory User Account and ensure the following is checked**
 
 
-
-.. image:: media/Lab3/kerbuser_delegation.JPG
-   :width: 2.06in
-   :height: 2.08in 
-
-
+.. image:: media/Lab3/kerbuser_delegation.png
+   :width: 4.06in
+   :height: 3.08in 
 
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
