@@ -87,7 +87,7 @@ TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keyta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers
+#. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
 
 .. image:: media/Lab3/image105.png
    :width: 3.31
