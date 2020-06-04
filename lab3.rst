@@ -116,14 +116,14 @@ ______________________________________________________________
 #. The next step is the run the ktpass command from the Windows command line as follows below
 
 
-``ktpass /princ HTTP/kerberos.f5lab@ACME.COM /mapuser f5lab\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out c:\file.keytab``
+    ``ktpass /princ HTTP/kerberos.f5lab@ACME.COM /mapuser f5lab\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out c:\file.keytab``
 
 
-#. Configure a Kerberos AAA Object
+#. Create the Kerberos AAA object by navigating to **Access -> Authentication -> Kerberos**
 
-
-#. Create the AAA object by navigating to **Access, Authentication, Kerberos
-
+.. image:: media/Lab3/image106.png
+   :width: 5.94in
+   :height: 3.33in
 
 #. Specify a **Name** (Kerberos_SSL)
 
