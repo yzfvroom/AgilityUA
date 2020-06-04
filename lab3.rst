@@ -112,6 +112,14 @@ ______________________________________________________________
 *Note: The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user*
        *account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com*
 
+**Click on the delegation tab of the new Active Directory User Account and ensure the following is checked**
+
+
+.. image:: media/Lab3/kerbuser_delegation.jpg
+   :width: 4.06in
+   :height: 3.08in 
+
+
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
 
