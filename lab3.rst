@@ -109,9 +109,8 @@ ______________________________________________________________
    :width: 4.06in
    :height: 3.08in
 
-.. note::
-   The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user
-   account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com**
+*Note: The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user*
+       *account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com*
 
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
