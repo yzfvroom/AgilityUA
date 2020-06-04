@@ -49,7 +49,7 @@ SAML Resource
 
 	Name			 	partner-app
 
-	SSO Configuration	prebuilt-idp.acme.com
+	SSO Configuration		idp.acme.com
 
 	Caption				partner-app
 
