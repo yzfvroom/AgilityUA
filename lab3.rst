@@ -116,7 +116,7 @@ ______________________________________________________________
 
 
 
-.. image:: media/Lab3/kerbuser_delegation.jpg
+.. image:: media/Lab3/kerbuser_delegation.JPG
    :width: 4.06in
    :height: 3.08in 
 
