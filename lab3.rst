@@ -149,26 +149,20 @@ ______________________________________________________________
 #.  Review the AAA server configuration at Access, Authentication
 
 
-TASK 3: Copy and Modify the idp.acme.com-policy Access Profile
+TASK 3: Configure, Modify, and test a new Access Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#. Navigate to Access, Profiles, Per-Session Profiles and Edit the **Kerberos_SAML** Access Profile
+#. Navigate to Access, Profiles, Per-Session Profiles and create a new Per-Session Access Profile called (Kerb_SAML)
 
+#. Edit the new Access Profile with the following settings:
 
-#. Delete the **Logon Page** object by clicking on the **X** as shown
+#. Click on the + sign between Start and Deny
 
+#. The Logon Tab will display a number of options.  Click the radio button next to
+	HTTP 401 Response and click Add Item.
 
-#. In the resulting **Item Deletion Confirmation** dialog, ensure that the
-   previous node is connect to the **fallback** branch, and click the
-   **Delete** button
-
-#. In the **Visual Policy Editor** window for ``/Common/Kerberos_SAML access policy``,
-   click the **Plus (+) Sign** between **Start** and the **AD Auth Resources Macro**
-
-
-#. In the pop-up dialog box, select the **Logon** tab and then select the
-   **Radio** next to **HTTP 401 Response**, and click the **Add Item** button
+#. Now click on the HTTP 401 Response object and enter the configuration parameters as indicated below
 
 
 #. In the **HTTP 401 Response** dialog box, enter the following information:
@@ -181,105 +175,41 @@ ______________________________________________________________
 
 #. Click the **Save** button at the bottom of the dialog box
 
+#. Click on the + sign to the top right of the HTTP 401 Response that specifies **Basic**
 
-#. In the **Visual Policy Editor** window for ``/Common/Kerberos_SAML policy``,
-   click the **Plus (+) Sign** on the **Negotiate** branch between
-   **HTTP 401 Response** and **Deny**
+#. Click on the Authentication tab, select the AD Auth object by clickin the radio button and click Add Item
+
+#. Click on the AD Auth object and select the /Common/AD_Server object under the Server drop down menu
+
+#. Click on Save
+
+#. Change the Successful Branch to Allow
+
+#. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
+
+#. Click on the **SAML Auth** radio button and click on Add item
+
+#. Click on the SAML Auth object and select the /Common/app.acme.com object next to the AAA Server section
+
+#. Click on the Branch Rules tab
+
+#. Name the Branch **Successful**, and ensure the Expression is set to **SAML Auth has Passed**
+
+#. Click Save
+
+#. On the Successful branch of the SAML Auth object modify the setting to Allow
+
+#. Click on Apply Policy
 
 
-#. In the pop-up dialog box, select the **Authentication** tab and then
-   select the **Radio** next to **Kerberos Auth**, and click the
-   **Add Item** button
 
 
-#. In the **Kerberos Auth** dialog box, enter the following information:
 
-   +----------------------+-------------------------------------+
-   | AAA Server:          | ``/Common/Kerberos_SSL`` (drop down) |
-   +----------------------+-------------------------------------+
-   | Request Based Auth:  | ``Disabled`` (drop down)            |
-   +----------------------+-------------------------------------+
+#. The final step in this lab is the Access Policy to the app.acme.com Virtual Server
 
+#. Within the GUI navigate to Local Traffic, Virtual Servers, and click on the app.acme.com Virtual Server
 
-#. Click the **Save** button at the bottom of the dialog box
-
-#. In the **Visual Policy Editor** window for
-   ``/Common/Kerberos_SSL policy``, click the **Plus (+) Sign** on the
-   **Successful** branch between **Kerberos Auth** and **Deny**.  Change this to Allow.
-
-#. In the pop-up dialog box, select the **Authentication** tab and then
-   select the **Radio** next to **AD Query**, and click the **Add Item** button
-
-#. In the resulting **AD Query(1)** pop-up window, select
-   ``/Commmon/AD_Server`` from the **Server** drop down menu
-
-#. In the **SearchFilter** field, enter the following value:
-   ``userPrincipalName=%{session.logon.last.username}``
-
-#. In the **AD Query(1)** window, click the **Branch Rules** tab
-
-#. Change the **Name** of the branch to *Successful*.
-
-#. Click the **Change** link next to the **Expression**
-
-#. In the resulting pop-up window, delete the existing expression by clicking
-   the **X** as shown
-
-#. Create a new **Simple** expression by clicking the **Add Expression** button
-
-#. In the resulting menu, select the following from the drop down menus:
-
-   +------------+---------------------+
-   | Agent Sel: | ``AD Query``        |
-   +------------+---------------------+
-   | Condition: | ``AD Query Passed`` |
-   +------------+---------------------+
-
-#. Click the **Add Expression** Button
-
-#. Click the **Finished** button to complete the expression
-
-#. Click the **Save** button to complete the **AD Query**
-
-#. In the **Visual Policy Editor** window for ``/Common/Kerberos_SAML policy``,
-   click the **Plus (+) Sign** on the **Successful** branch between
-   **AD Query(1)** and **Deny**
-
-#. In the pop-up dialog box, select the **Assignment** tab and then select
-   the **Radio** next to **Advanced Resource Assign**, and click the
-   **Add Item** button
-
-#. In the resulting **Advanced Resource Assign(1)** pop-up window, click
-   the **Add New Entry** button
-
-#. In the new Resource Assignment entry, click the **Add/Delete** link
-
-#. In the resulting pop-up window, click the **SAML** tab, and select the
-   **Checkbox** next to */Common/partner-app*
-
-#. Click the **Webtop** tab, and select the **Checkbox** next to
-   ``/Common/full_webtop``
-
-#. Click the **Update** button at the bottom of the window to complete
-   the Resource Assignment entry
-
-#. Click the **Save** button at the bottom of the
-   **Advanced Resource Assign(1)** window
-
-#. In the **Visual Policy Editor**, select the **Deny** ending on the
-   fallback branch following **Advanced Resource Assign**
-
-#. In the **Select Ending** dialog box, selet the **Allow** radio button
-   and then click **Save**
-
-#. In the **Visual Policy Editor**, click **Apply Access Policy**
-   (top left), and close the **Visual Policy Editor**
-
-#. The final step in this lab is the apply the **Kerberos_SAML** policy to the idp.acme.com Virtual Server
-
-#. Within the GUI navigate to Local Traffic, Virtual Servers, and click on the idp.acme.com Virtual Server
-
-#. Scroll down to the Access Policy section and select the **Kerberos_SAML** Access Policy and click the update button at the bottom of the page.
+#. Scroll down to the Access Policy section and select your new Access Policy and click the update button at the bottom of the page.
 
 
 TASK 4 - Test the Kerberos to SAML Configuration
@@ -291,16 +221,10 @@ ______________________________________________________________
    (if configured), for the purposes of this Lab Microsoft Internet
    Explorer has been configured and will be used.
 
-#. Using Internet Explorer from the jump host, navigate to the SAML IdP you
-   previously configured at *idp.acme.com* (or click the
-   provided bookmark)
+#. Using Internet Explorer on the jump host type in https://app.acme.com
 
 #. Were you prompted for credentials? Were you successfully authenticated?
-   Did you see the webtop with the SP application?
-
-#. Click on the Partner App icon. Were you successfully authenticated
-   (via SAML) to the SP?
-
+   
 #. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
