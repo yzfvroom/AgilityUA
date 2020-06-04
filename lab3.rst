@@ -89,7 +89,7 @@ ______________________________________________________________
 
 #. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers
 
-.. image:: media/Lab3/image104.png
+.. image:: media/Lab3/image105.png
    :width: 3.31
    :height: 3.55
 
