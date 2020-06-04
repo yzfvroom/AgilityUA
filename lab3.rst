@@ -115,9 +115,11 @@ ______________________________________________________________
 **Click on the delegation tab of the new Active Directory User Account and ensure the following is checked**
 
 
+
 .. image:: media/Lab3/kerbuser_delegation.jpg
    :width: 4.06in
    :height: 3.08in 
+
 
 
 
