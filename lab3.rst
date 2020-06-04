@@ -47,16 +47,18 @@ SAML Resource
 
 #.  In the New SAML Resource window, enter the following values:
 
-	Name			 	partner-app
-
-	SSO Configuration		idp.acme.com
-
-	Caption				partner-app
+    +--------------------+---------------------------------+
+    | Name:              | ``parnter-app``                 |
+    +--------------------+---------------------------------+
+    | SSO Configuration: | ``idp.acme.com``                |
+    +--------------------+---------------------------------+
+    | Caption:           | ``parnter-app``                 |
+    +--------------------+---------------------------------+
 
 .. image:: media/Lab3/image001.png
    :width: 4.06in
-   :height: 3.08in 
-   
+   :height: 3.08in
+
 Click Finished at the bottom of the configuration window
 
 Webtop
@@ -69,14 +71,14 @@ Webtop
 
 	Name	full_webtop
 	Type	Full (drop down)
-	
-	
-	
+
+
+
 .. image:: media/Lab3/image002.jpg
    :width: 4.06in
-   :height: 3.08in 
-	
-	
+   :height: 3.08in
+
+
 
 Click finished at the bottom of the GUI
 
@@ -101,15 +103,15 @@ Directory Domain.  Right click the **f5lab.local** and drop down menu will displ
 
 .. image:: media/Lab3/image100.png
    :width: 4.06in
-   :height: 3.08in 
+   :height: 3.08in
 
 
 .. image:: media/Lab3/image101.png
    :width: 4.06in
-   :height: 3.08in 
+   :height: 3.08in
 
 #. **Note - The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com**
-	
+
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
 
@@ -166,7 +168,7 @@ ______________________________________________________________
 #. In the **HTTP 401 Response** dialog box, enter the following information:
 
    +-------------------+---------------------------------+
-   | Basic Auth Realm: | ``f5lab.local``                  |
+   | Basic Auth Realm: | ``f5lab.local``                 |
    +-------------------+---------------------------------+
    | HTTP Auth Level:  | ``basic+negotiate`` (drop down) |
    +-------------------+---------------------------------+
