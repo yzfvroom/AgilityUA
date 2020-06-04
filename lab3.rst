@@ -195,6 +195,12 @@ ______________________________________________________________
 
 #. Name the Branch **Successful**, and ensure the Expression is set to **SAML Auth has Passed**
 
+
+.. image:: media/Lab3/SAML_Auth.png
+   :width: 4.06in
+   :height: 3.08in 
+
+
 #. Click Save
 
 #. On the Successful branch of the SAML Auth object modify the setting to Allow
@@ -202,7 +208,9 @@ ______________________________________________________________
 #. Click on Apply Policy
 
 
-
+.. image:: media/Lab3/final_access_policy.png
+   :width: 4.06in
+   :height: 3.08in 
 
 
 #. The final step in this lab is the Access Policy to the app.acme.com Virtual Server
