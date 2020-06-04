@@ -156,7 +156,7 @@ ______________________________________________________________
    **Delete** button
 
 #. In the **Visual Policy Editor** window for ``/Common/Kerberos_SAML access policy``,
-   click the **Plus (+) Sign** between **Start** and **AD Auth**
+   click the **Plus (+) Sign** between **Start** and the **AD Auth Resources Macro**
 
 
 #. In the pop-up dialog box, select the **Logon** tab and then select the
@@ -197,7 +197,7 @@ ______________________________________________________________
 
 #. In the **Visual Policy Editor** window for
    ``/Common/Kerberos_SSL policy``, click the **Plus (+) Sign** on the
-   **Successful** branch between **Kerberos Auth** and **Deny**
+   **Successful** branch between **Kerberos Auth** and **Deny**.  Change this to Allow.
 
 #. In the pop-up dialog box, select the **Authentication** tab and then
    select the **Radio** next to **AD Query**, and click the **Add Item** button
