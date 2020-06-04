@@ -93,7 +93,7 @@ ______________________________________________________________
    :width: 3.31
    :height: 3.55
 
-#. Click on New User.
+#. From the File menu click on **Action -> New -> User**
 
 #. Create a new Active Directory User Account with the follow attributes:
 
@@ -109,7 +109,7 @@ ______________________________________________________________
    :width: 4.06in
    :height: 3.08in
 
-#. **Note - The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com**
+.. Note:: The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com**
 
 
 #. The next step is the run the ktpass command from the Windows command line as follows below
