@@ -87,14 +87,13 @@ TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keyta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-During this exercise we will make a copy of the idp.acme.com-policy and modify
-it to demonstrate Kerberos to SAML functionality.  Navigate to Access, Profiles, Access Profiles
-and click on the Copy link to the far right of the **idp.acme.com-policy**.   Name the policy **Kerberos_SAML**
+#. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers
 
-From the Jump Host open a command prompt and type "mmc", then click File, click Add/Remove Snap-In, click on Active Directory
-Users and Computer, click the Add button, and click OK.  This will launch the Active Directory Management
-console.   Now click on the right arrow next to Active Directory Users and Computers, then click on the **f5lab.local** Active
-Directory Domain.  Right click the **f5lab.local** and drop down menu will display.  Click on New User.
+.. image:: media/Lab3/image104.png
+   :width: 3.31
+   :height: 3.55
+
+#. Click on New User.
 
 #. Create a new Active Directory User Account with the follow attributes:
 
