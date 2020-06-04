@@ -126,7 +126,7 @@ Directory Domain.  Right click the **f5lab.local** and drop down menu will displ
 #. Specify a **Name** (Kerberos_SSL)
 
 
-#. Specify the **Auth Realm** (f5lab.local)
+#. Specify the **Auth Realm** (F5LAB.LOCAL)
 
 
 #. Service Name **HTTP**
