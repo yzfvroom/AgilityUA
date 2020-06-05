@@ -44,28 +44,30 @@ AD User and Keytab
 
    |image105|
 
-#. In this example, the User Logon Name *kerberos* has been created
+#. Create the User Logon Name *kerberos*, click **Next**
 
    |image100|
+
+#. Open a command prompt on the jumphost.  Change directory to C:\User\User1  **cd c:\user\user1**
 
 #. From the Windows command line, run the KTPASS command to generate a keytab
    file for the previously created user object
 
-   ``ktpass /princ HTTP/kerberos.acme.com@ACME.COM /mapuser acme\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out c:\file.keytab``
+   ``ktpass -princ HTTP/idp.acme.com@F5LAB.LOCAL -mapuser f5lab\kerberos crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass password -out file2.keytab``
 
    +-------------------------+-----------------------+
-   | FQDN of virtual server: | ``kerberos.acme.com`` |
+   | FQDN of virtual server: | ``idp.acme.com``      |
    +-------------------------+-----------------------+
-   | AD Domain (UPN format): | ``@ACME.COM``         |
+   | AD Domain (UPN format): | ``@F5LAB.LOCAL``      |
    +-------------------------+-----------------------+
-   | Username:               | ``acme\kerberos``     |
+   | Username:               | ``f5lab\kerberos``    |
    +-------------------------+-----------------------+
    | Password:               | ``password``          |
    +-------------------------+-----------------------+
 
 #. Review the changes to the AD User object
 
-   |image114|
+   |image101|
 
 Kerberos AAA Object
 ~~~~~~~~~~~~~~~~~~~
@@ -288,6 +290,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 
 .. |image105| image:: media/Lab3/image105.png
 .. |image100| image:: media/Lab3/image100.png
+.. |image101| image:: media/Lab3/image100.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
