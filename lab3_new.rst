@@ -272,6 +272,11 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
    |image093|
 
+#. Scroll down to **Access Policy** and select the ''idp.acme.com-kerberos''
+   policy from the drop down. Scroll to the down and click Update
+
+   |image094|
+
 TASK 2 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -324,6 +329,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image091| image:: media/Lab3/image091.png
 .. |image092| image:: media/Lab3/image092.png
 .. |image093| image:: media/Lab3/image093.png
+.. |image093| image:: media/Lab3/image093.png
+
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
