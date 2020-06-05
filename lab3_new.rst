@@ -285,12 +285,9 @@ TASK 2 - Test the Kerberos to SAML Configuration
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
 
-.. |br| raw:: html
 
-   <br />
-
-.. |image105|image:: media/Lab3/image105.png
-.. |image100|image:: media/Lab3/image100.png
+.. |image105| image:: media/Lab3/image105.png
+.. |image100| image:: media/Lab3/image100.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
