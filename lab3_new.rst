@@ -217,7 +217,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
 #. Click the **Finished** button to complete the expression
 
-   |image85|
+   |image081|
 
 #. Click the **Save** button to complete the **AD Query**
 
@@ -315,6 +315,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image082| image:: media/Lab3/image082.png
 .. |image080| image:: media/Lab3/image080.png
 .. |image084| image:: media/Lab3/image084.png
+.. |image081| image:: media/Lab3/image081.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
