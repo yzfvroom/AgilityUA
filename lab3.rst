@@ -39,13 +39,13 @@ ______________________________________________________________
 
 SAML Resource
 
-#.  Begin by selecting Access > Federation > SAML Resources
+1.  Begin by selecting Access > Federation > SAML Resources
 
 
-#.  Click the Create button (far right)
+1.  Click the Create button (far right)
 
 
-#.  In the New SAML Resource window, enter the following values:
+3.  In the New SAML Resource window, enter the following values:
 
     +--------------------+---------------------------------+
     | Name:              | ``parnter-app``                 |
@@ -61,44 +61,53 @@ SAML Resource
 
 Click Finished at the bottom of the configuration window
 
-Webtop
+**Create Webtop**
 
-#.	Select Access > Webtops > Webtop List
+4.	Select Access > Webtops > Webtop List
 
-#.	Click Create button (far right)
+5.	Click Create button (far right)
 
-#.	In the resulting window, enter the following values
+6.	In the resulting window, enter the following values
 
-	Name	full_webtop
-	Type	Full (drop down)
+  +--------------------+---------------------------------+
+  | Name:              | ``full_webtop``                 |
+  +--------------------+---------------------------------+
+  | Type:              | ``Full`` (drop down)            |
+  +--------------------+---------------------------------+
 
-
+7. Click finished at the bottom of the GUI
 
 .. image:: media/Lab3/image002.jpg
    :width: 4.06in
    :height: 3.08in
 
 
-
-Click finished at the bottom of the GUI
-
-
 TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keytab file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ______________________________________________________________
 
-#. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
+1. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
 
 .. image:: media/Lab3/image105.png
    :width: 3.31
    :height: 3.55
 
-#. From the File menu click on **Action -> New -> User**
+2. From the File menu click on **Action -> New -> User**
 
-#. Create a new Active Directory User Account with the follow attributes:
+3. Create a new Active Directory User Account with the follow attributes:
+
+  +--------------------+---------------------------------+
+  | First Name:        | ``Kerb``                        |
+  +--------------------+---------------------------------+
+  | Last Name:         | ``Eros``                        |
+  +--------------------+---------------------------------+
+  | User logon Name:   | ``kerberos``                    |
+  +--------------------+---------------------------------+
+  | Password:          | ``password``                    |
+  +--------------------+---------------------------------+
 
 
-#. The Active Directory account should be name "kerbsso".
+4. The Active Directory account should be name "kerberos".
 
 .. image:: media/Lab3/image100.png
    :width: 4.06in
@@ -109,36 +118,33 @@ ______________________________________________________________
    :width: 4.06in
    :height: 3.08in
 
-*Note: The Active Directory Domain is f5lab.local and thus the AD User Account will reflect a user*
-       *account with a User Logon Name of kerberos@f5lab.local versus kerberos@acme.com*
+5. The next step is the run the ktpass command from the Windows command line as follows below
 
-**Click on the delegation tab of the new Active Directory User Account and ensure the following is checked**
+
+        ``ktpass -princ HTTP/kerberos.f5lab.local@f5lab.local -mapuser f5lab\kerberos crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass password -out file2.keytab``
+
+6. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service* selected
 
 
 .. image:: media/Lab3/kerbuser_delegation.png
    :width: 4.06in
-   :height: 3.08in 
+   :height: 3.08in
 
+7. Return to the BIG-IP
 
-#. The next step is the run the ktpass command from the Windows command line as follows below
-
-
-     ``ktpass /princ HTTP/kerberos.f5lab@ACME.COM /mapuser f5lab\kerberos /ptype KRB5_NT_PRINCIPAL /pass password /out c:\file.keytab``
-
-
-#. Create the Kerberos AAA object by navigating to **Access -> Authentication -> Kerberos**
+8. Create the Kerberos AAA object by navigating to **Access -> Authentication -> Kerberos**
 
 .. image:: media/Lab3/image106.png
    :width: 5.94in
    :height: 3.33in
 
-+--------------------+---------------------------------+
-| Name:              | ``Kerbos_SSL``                  |
-+--------------------+---------------------------------+
-| Auth Realm:        | ``F5LAB.LOCAL``                 |
-+--------------------+---------------------------------+
-| Service Name:      | ``HTTP``                        |
-+--------------------+---------------------------------+
+   +--------------------+---------------------------------+
+   | Name:              | ``Kerbos_SSL``                  |
+   +--------------------+---------------------------------+
+   | Auth Realm:        | ``F5LAB.LOCAL``                 |
+   +--------------------+---------------------------------+
+   | Service Name:      | ``HTTP``                        |
+   +--------------------+---------------------------------+
 
 #. Click the **Choose File** button and browse to locate the Keytab file (The Keytab file should be located at c:\file.keytab)
 
@@ -198,7 +204,7 @@ ______________________________________________________________
 
 .. image:: media/Lab3/SAML_Auth.png
    :width: 4.06in
-   :height: 3.08in 
+   :height: 3.08in
 
 
 #. Click Save
@@ -210,7 +216,7 @@ ______________________________________________________________
 
 .. image:: media/Lab3/final_access_policy.png
    :width: 4.06in
-   :height: 3.08in 
+   :height: 3.08in
 
 
 #. The final step in this lab is the Access Policy to the app.acme.com Virtual Server
@@ -232,7 +238,7 @@ ______________________________________________________________
 #. Using Internet Explorer on the jump host type in https://app.acme.com
 
 #. Were you prompted for credentials? Were you successfully authenticated?
-   
+
 #. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
