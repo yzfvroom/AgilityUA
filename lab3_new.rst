@@ -84,7 +84,7 @@ Kerberos AAA Object
 
 #. Create the AAA object by navigating to **Access ‑> Authentication -> Kerberos**
 
-  |image106|
+    |image106|
 
     +--------------------+---------------------------------+
     | Name:              | ``Kerbos_SSL``                  |
@@ -313,7 +313,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image111| image:: media/Lab3/image111.png
 .. |image112| image:: media/Lab3/image112.png
 .. |image106| image:: media/Lab3/image106.png
-.. |image113| image:: media/Lab3/image113.png  
+.. |image113| image:: media/Lab3/image113.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
