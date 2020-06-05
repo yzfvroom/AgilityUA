@@ -221,9 +221,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
 #. Click the **Save** button to complete the **AD Query**
 
-   |image86|
-
-#. In the **Visual Policy Editor** window for ``/Common/idp.f5demo.com‑policy``,
+#. In the **Visual Policy Editor** window for ``/Common/idp.acme.com‑policy``,
    click the **Plus (+) Sign** on the **Successful** branch between
    **AD Query(1)** and **Deny**
 
@@ -231,7 +229,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
    the **Radio** next to **Advanced Resource Assign**, and click the
    **Add Item** button
 
-   |image87|
+   |image087|
 
 #. In the resulting **Advanced Resource Assign(1)** pop-up window, click
    the **Add New Entry** button
@@ -316,6 +314,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image080| image:: media/Lab3/image080.png
 .. |image084| image:: media/Lab3/image084.png
 .. |image081| image:: media/Lab3/image081.png
+.. |image087| image:: media/Lab3/image087.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
