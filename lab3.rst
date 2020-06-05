@@ -207,7 +207,13 @@ TASK 3: Configure, Modify, and test a new Access Profile
    :width: 3.9in
    :height: 0.92in
 
-#. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
+12. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
+
+13. Click on the Authentication and choose SAML Auth radio button, click Add item
+
+.. image:: media/Lab3/image110.png
+   :width: 3.77in
+   :height: 0.82in
 
 #. Click on the **SAML Auth** radio button and click on Add item
 
