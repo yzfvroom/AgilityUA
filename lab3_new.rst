@@ -73,6 +73,10 @@ AD User and Keytab
 
    |image111|
 
+#. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service** Selected
+
+   |image112|
+
 Kerberos AAA Object
 ~~~~~~~~~~~~~~~~~~~
 
@@ -296,6 +300,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image100| image:: media/Lab3/image100.png
 .. |image101| image:: media/Lab3/image101.png
 .. |image111| image:: media/Lab3/image111.png
+.. |image112| image:: media/Lab3/image112.png
+
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
