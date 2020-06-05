@@ -148,7 +148,7 @@ ______________________________________________________________
         | Service Name:      | ``HTTP``                        |
         +--------------------+---------------------------------+
 
-9. Click the **Choose File** button and browse to locate the Keytab file in C:\User\User1\file2.keytab
+9. Click the **Choose File** button and browse to locate the Keytab file in C:\\User\\User1\\file2.keytab
 
 
 #. Click Finished to complete the creation of the AAA object
