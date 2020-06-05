@@ -153,7 +153,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
    select the **Radio** next to **Kerberos Auth**, and click the
    **Add Item** button
 
-   |image075|
+.. image:: media/lab3/image075.png
 
 #. In the **Kerberos Auth** dialog box, enter the following information:
 
