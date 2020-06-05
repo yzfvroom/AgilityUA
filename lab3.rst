@@ -123,7 +123,7 @@ ______________________________________________________________
 
         ``ktpass -princ HTTP/kerberos.f5lab.local@f5lab.local -mapuser f5lab\kerberos crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass password -out file2.keytab``
 
-6. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service* selected
+6. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service** selected
 
 
 .. image:: media/Lab3/kerbuser_delegation.png
@@ -134,9 +134,11 @@ ______________________________________________________________
 
 8. Create the Kerberos AAA object by navigating to **Access -> Authentication -> Kerberos**
 
-.. image:: media/Lab3/image106.png
-   :width: 5.94in
-   :height: 3.33in
++----------------------------------------------------------------------+
+|.. image:: media/Lab3/image106.png                                    |
+|   :width: 5.94in                                                     |
+|   :height: 3.33in                                                    |
++----------------------------------------------------------------------+
 
    +--------------------+---------------------------------+
    | Name:              | ``Kerbos_SSL``                  |
