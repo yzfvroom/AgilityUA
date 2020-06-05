@@ -132,7 +132,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the **HTTP 401 Response** dialog box, enter the following information and click Save:
 
    +-------------------+---------------------------------+
-   | Basic Auth Realm: | ``F5LAB.LOCAL``                  |
+   | Basic Auth Realm: | ``F5LAB.LOCAL``                 |
    +-------------------+---------------------------------+
    | HTTP Auth Level:  | ``basic+negotiate`` (drop down) |
    +-------------------+---------------------------------+
