@@ -129,7 +129,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
    |image107|
 
-#. In the **HTTP 401 Response** dialog box, enter the following information:
+#. In the **HTTP 401 Response** dialog box, enter the following information and click Save:
 
       +-------------------+---------------------------------+
       | Basic Auth Realm: | ``f5demo.com``                  |
@@ -139,33 +139,13 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
       |image116|
 
-#. Delete the **Logon Page** object by clicking on the **X** as shown
-
-   |image71|
+#. Delete the **Logon Page** object by clicking on the **X**
 
 #. In the resulting **Item Deletion Confirmation** dialog, ensure that the
-   previous node is connect to the **fallback** branch, and click the
+   previous node is connect to the **acme.com** branch, and click the
    **Delete** button
 
-   |image72|
-
-#. In the **Visual Policy Editor** window for ``/Common/idp.f5demo.com‑policy``,
-   click the **Plus (+) Sign** between **Start** and **AD Auth**
-
-   |image73|
-
-#. In the pop-up dialog box, select the **Logon** tab and then select the
-   **Radio** next to **HTTP 401 Response**, and click the **Add Item** button
-
-   |image74|
-
-
-
-#. Click the **Save** button at the bottom of the dialog box
-
-   |image75|
-
-#. In the **Visual Policy Editor** window for ``/Common/idp.f5demo.com‑policy``,
+#. In the **Visual Policy Editor** window for ``/Common/idp.acme.com‑kerberos``,
    click the **Plus (+) Sign** on the **Negotiate** branch between
    **HTTP 401 Response** and **Deny**
 
@@ -330,28 +310,28 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image114| image:: media/Lab3/image114.png
 .. |image107| image:: media/Lab3/image107.png
 .. |image116| image:: media/Lab3/image116.png
-.. |image70| image:: /_static/class1/image44.png
-.. |image71| image:: /_static/class1/image70.png
-.. |image72| image:: /_static/class1/image71.png
-.. |image73| image:: /_static/class1/image72.png
-.. |image74| image:: /_static/class1/image73.png
-.. |image75| image:: /_static/class1/image74.png
-.. |image76| image:: /_static/class1/image75.png
-.. |image77| image:: /_static/class1/image76.png
-.. |image78| image:: /_static/class1/image77.png
-.. |image79| image:: /_static/class1/image78.png
-.. |image80| image:: /_static/class1/image79.png
-.. |image81| image:: /_static/class1/image53.png
-.. |image82| image:: /_static/class1/image54.png
-.. |image83| image:: /_static/class1/image80.png
-.. |image84| image:: /_static/class1/image56.png
-.. |image85| image:: /_static/class1/image81.png
-.. |image86| image:: /_static/class1/image58.png
-.. |image87| image:: /_static/class1/image60.png
-.. |image88| image:: /_static/class1/image61.png
-.. |image89| image:: /_static/class1/image62.png
-.. |image90| image:: /_static/class1/image63.png
-.. |image91| image:: /_static/class1/image82.png
-.. |image92| image:: /_static/class1/image65.png
-.. |image93| image:: /_static/class1/image83.png
-.. |image94| image:: /_static/class1/image84.png
+.. |image70| image:: media/lab3/image44.png
+.. |image71| image:: media/lab3/image70.png
+.. |image72| image:: media/lab3/image71.png
+.. |image73| image:: media/lab3/image72.png
+.. |image74| image:: media/lab3/image73.png
+.. |image75| image:: media/lab3/image74.png
+.. |image76| image:: media/lab3/image75.png
+.. |image77| image:: media/lab3/image76.png
+.. |image78| image:: media/lab3/image77.png
+.. |image79| image:: media/lab3/image78.png
+.. |image80| image:: media/lab3/image79.png
+.. |image81| image:: media/lab3/image53.png
+.. |image82| image:: media/lab3/image54.png
+.. |image83| image:: media/lab3/image80.png
+.. |image84| image:: media/lab3/image56.png
+.. |image85| image:: media/lab3/image81.png
+.. |image86| image:: media/lab3/image58.png
+.. |image87| image:: media/lab3/image60.png
+.. |image88| image:: media/lab3/image61.png
+.. |image89| image:: media/lab3/image62.png
+.. |image90| image:: media/lab3/image63.png
+.. |image91| image:: media/lab3/image82.png
+.. |image92| image:: media/lab3/image65.png
+.. |image93| image:: media/lab3/image83.png
+.. |image94| image:: media/lab3/image84.png
