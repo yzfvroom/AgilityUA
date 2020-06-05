@@ -239,9 +239,9 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
    |image088|
 
 #. In the resulting pop-up window, click the **SAML** tab, and select the
-   **Checkbox** next to */Common/partner-app*
+   **Checkbox** next to */Common/app.acme.com*
 
-   |image89|
+   |image089|
 
 #. Click the **Webtop** tab, and select the **Checkbox** next to
    ``/Common/full_webtop``
@@ -316,6 +316,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image081| image:: media/Lab3/image081.png
 .. |image087| image:: media/Lab3/image087.png
 .. |image088| image:: media/Lab3/image088.png
+.. |image089| image:: media/Lab3/image089.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
