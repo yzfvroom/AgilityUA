@@ -46,7 +46,7 @@ AD User and Keytab
 
 #. In this example, the User Logon Name *kerberos* has been created
 
-   |image113|
+   |image100|
 
 #. From the Windows command line, run the KTPASS command to generate a keytab
    file for the previously created user object
@@ -289,9 +289,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 
    <br />
 
-.. |image105| image:: media/Lab3/image105.png
-   :width: 3.31
-   :height: 3.55
+.. |image105|image:: media/Lab3/image105.png
+.. |image100|image:: media/Lab3/image100.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
