@@ -236,7 +236,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
 #. In the new Resource Assignment entry, click the **Add/Delete** link
 
-   |image88|
+   |image088|
 
 #. In the resulting pop-up window, click the **SAML** tab, and select the
    **Checkbox** next to */Common/partner-app*
@@ -315,6 +315,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image084| image:: media/Lab3/image084.png
 .. |image081| image:: media/Lab3/image081.png
 .. |image087| image:: media/Lab3/image087.png
+.. |image088| image:: media/Lab3/image088.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
