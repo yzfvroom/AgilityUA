@@ -179,12 +179,12 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
    |image078|
 
 #. In the resulting **AD Query(1)** pop-up window, select
-   ``/Commmon/f5demo_ad`` from the **Server** drop down menu
+   ``/Commmon/AD_Server`` from the **Server** drop down menu
 
 #. In the **SearchFilter** field, enter the following value:
    ``userPrincipalName=%{session.logon.last.username}``
 
-   |image79|
+   |image079|
 
 #. In the **AD Query(1)** window, click the **Branch Rules** tab
 
@@ -192,7 +192,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
 #. Click the **Change** link next to the **Expression**
 
-   |image80|
+   |image080|
 
 #. In the resulting pop-up window, delete the existing expression by clicking
    the **X** as shown
@@ -310,6 +310,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image076| image:: media/Lab3/image076.png
 .. |image077| image:: media/Lab3/image077.png
 .. |image078| image:: media/Lab3/image078.png
+.. |image079| image:: media/Lab3/image079.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
