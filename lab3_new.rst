@@ -252,12 +252,12 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
    the Resource Assignment entry
 
 #. Click the **Save** button at the bottom of the
-   **Advanced Resource Assign(1)** window
+   **Advanced Resource Assign** window
 
 #. In the **Visual Policy Editor**, select the **Deny** ending on the
    fallback branch following **Advanced Resource Assign**
 
-   |image91|
+   |image091|
 
 #. In the **Select Ending** dialog box, selet the **Allow** radio button
    and then click **Save**
@@ -318,6 +318,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image088| image:: media/Lab3/image088.png
 .. |image089| image:: media/Lab3/image089.png
 .. |image090| image:: media/Lab3/image090.png
+.. |image091| image:: media/Lab3/image091.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
