@@ -204,8 +204,8 @@ TASK 3: Configure, Modify, and test a new Access Profile
 11. On the Successful Branch set ending to **Allow**
 
 .. image:: media/Lab3/image109.png
-   :width: 1.55in
-   :height: 0.76in
+   :width: 3.9in
+   :height: 0.92in
 
 #. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
 
