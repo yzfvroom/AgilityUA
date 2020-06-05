@@ -288,7 +288,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 #. Using Internet Explorer from the jump host, navigate to the SAML IdP you
    previously configured at *https://idp.acme.com*
 
-   |image094|
+   |image095|
 
 #. Were you prompted for credentials? Were you successfully authenticated?
    Did you see the webtop with the SP application?
@@ -330,3 +330,4 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image093| image:: media/Lab3/image093.png
 .. |image093| image:: media/Lab3/image093.png
 .. |image094| image:: media/Lab3/image094.png
+.. |image095| image:: media/Lab3/image095.png
