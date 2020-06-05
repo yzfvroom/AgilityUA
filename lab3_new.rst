@@ -286,10 +286,9 @@ TASK 2 - Test the Kerberos to SAML Configuration
    Explorer has been configured and will be used.
 
 #. Using Internet Explorer from the jump host, navigate to the SAML IdP you
-   previously configured at *https://idp.acme.com* (or click the
-   provided bookmark)
+   previously configured at *https://idp.acme.com*
 
-   |image94|
+   |image094|
 
 #. Were you prompted for credentials? Were you successfully authenticated?
    Did you see the webtop with the SP application?
@@ -330,29 +329,4 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image092| image:: media/Lab3/image092.png
 .. |image093| image:: media/Lab3/image093.png
 .. |image093| image:: media/Lab3/image093.png
-
-
-.. |image70| image:: media/lab3/image44.png
-.. |image71| image:: media/lab3/image70.png
-.. |image72| image:: media/lab3/image71.png
-.. |image73| image:: media/lab3/image72.png
-.. |image74| image:: media/lab3/image73.png
-.. |image76| image:: media/lab3/image75.png
-.. |image77| image:: media/lab3/image76.png
-.. |image78| image:: media/lab3/image77.png
-.. |image79| image:: media/lab3/image78.png
-.. |image80| image:: media/lab3/image79.png
-.. |image81| image:: media/lab3/image53.png
-.. |image82| image:: media/lab3/image54.png
-.. |image83| image:: media/lab3/image80.png
-.. |image84| image:: media/lab3/image56.png
-.. |image85| image:: media/lab3/image81.png
-.. |image86| image:: media/lab3/image58.png
-.. |image87| image:: media/lab3/image60.png
-.. |image88| image:: media/lab3/image61.png
-.. |image89| image:: media/lab3/image62.png
-.. |image90| image:: media/lab3/image63.png
-.. |image91| image:: media/lab3/image82.png
-.. |image92| image:: media/lab3/image65.png
-.. |image93| image:: media/lab3/image83.png
-.. |image94| image:: media/lab3/image84.png
+.. |image094| image:: media/Lab3/image094.png
