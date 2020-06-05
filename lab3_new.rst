@@ -176,7 +176,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the pop-up dialog box, select the **Authentication** tab and then
    select the **Radio** next to **AD Query**, and click the **Add Item** button
 
-   |image78|
+   |image078|
 
 #. In the resulting **AD Query(1)** pop-up window, select
    ``/Commmon/f5demo_ad`` from the **Server** drop down menu
@@ -309,8 +309,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image075| image:: media/Lab3/image075.png
 .. |image076| image:: media/Lab3/image076.png
 .. |image077| image:: media/Lab3/image077.png
+.. |image078| image:: media/Lab3/image078.png
 
-.. |image077| image:: media/lab3/image077.png
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
 .. |image72| image:: media/lab3/image71.png
