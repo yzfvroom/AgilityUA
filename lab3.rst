@@ -169,20 +169,17 @@ TASK 3: Configure, Modify, and test a new Access Profile
     +--------------------+---------------------------------+
 
 
-#. Edit the new Access Profile with the following settings:
+2. Edit the new Access Profile with the following settings:
 
-#. Click on the + sign between Start and Deny
+3. Click on the + sign between Start and Deny
 
-#. From the Logon Tab click the radio button next to HTTP 401 Response and click Add Item.
+4. From the Logon Tab click the radio button next to HTTP 401 Response and click Add Item.
 
 .. image:: media/Lab3/image107.png
    :width: 3.76in
    :height: 1.55in
 
-#. Now click on the HTTP 401 Response object and enter the configuration parameters as indicated below
-
-
-#. In the **HTTP 401 Response** dialog box, enter the following information:
+5. In the **HTTP 401 Response** dialog box, enter the following information:
 
    +-------------------+---------------------------------+
    | Basic Auth Realm: | ``f5lab.local``                 |
@@ -190,11 +187,16 @@ TASK 3: Configure, Modify, and test a new Access Profile
    | HTTP Auth Level:  | ``basic+negotiate`` (drop down) |
    +-------------------+---------------------------------+
 
-#. Click the **Save** button at the bottom of the dialog box
+6. Click the **Save** button at the bottom of the dialog box
 
 #. Click on the + sign to the top right of the HTTP 401 Response that specifies **Basic**
 
-#. Click on the Authentication tab, select the AD Auth object by clickin the radio button and click Add Item
+#. Click on the Authentication tab, select the AD Auth object by clicking the radio button and click Add Item
+
+.. image:: media/Lab3/image108.png
+   :width: 3.764in
+   :height: 1.6in
+
 
 #. Click on the AD Auth object and select the /Common/AD_Server object under the Server drop down menu
 
