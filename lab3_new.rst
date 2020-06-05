@@ -293,7 +293,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 #. Were you prompted for credentials? Were you successfully authenticated?
    Did you see the webtop with the SP application?
 
-#. Click on the Partner App icon. Were you successfully authenticated
+#. Click on the app.acme.com icon. Were you successfully authenticated
    (via SAML) to the SP?
 
 #. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
