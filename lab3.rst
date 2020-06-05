@@ -44,7 +44,7 @@ AD User and Keytab
 
    |image105|
 
-#. Create the User Logon Name *kerberos*, click **Next**
+#. Create the User Logon Name *kerberos*, click **Next** uncheck box for user to change password check box for never expires and set password to password
 
    |image100|
 
