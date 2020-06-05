@@ -83,8 +83,7 @@ Click Finished at the bottom of the configuration window
 
 
 TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keytab file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-______________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
 
@@ -151,24 +150,34 @@ ______________________________________________________________
 9. Click the **Choose File** button and browse to locate the Keytab file in C:\\User\\User1\\file2.keytab
 
 
-#. Click Finished to complete the creation of the AAA object
+10. Click Finished to complete the creation of the AAA object
 
-
-#.  Review the AAA server configuration at Access, Authentication
 
 
 TASK 3: Configure, Modify, and test a new Access Profile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-______________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate to Access, Profiles, Per-Session Profiles and create a new Per-Session Access Profile called (Kerb_SAML)
+
+1. Navigate to **Access -> Profiles ->Per-Session Profiles** and create a new Per-Session Access Profile called **Kerb_SAML**
+
+    +--------------------+---------------------------------+
+    | Name:              | ``Kerb_SAML``                   |
+    +--------------------+---------------------------------+
+    | Profile Type:      | ``All``                         |
+    +--------------------+---------------------------------+
+    | Languages:         | ``English``                     |
+    +--------------------+---------------------------------+
+
 
 #. Edit the new Access Profile with the following settings:
 
 #. Click on the + sign between Start and Deny
 
-#. The Logon Tab will display a number of options.  Click the radio button next to
-	HTTP 401 Response and click Add Item.
+#. From the Logon Tab click the radio button next to HTTP 401 Response and click Add Item.
+
+.. image:: media/Lab3/image107.png
+   :width: 3.76in
+   :height: 1.55in
 
 #. Now click on the HTTP 401 Response object and enter the configuration parameters as indicated below
 
