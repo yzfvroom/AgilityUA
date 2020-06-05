@@ -119,7 +119,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
    |image114|
 
-#. Give it a name **idp.acme.com-kerberos**
+#. Give it a name **idp.acme.com-kerberos** and click **Copy**
 
 #. Click on **Edit** for this new policy
 
