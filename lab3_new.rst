@@ -158,21 +158,17 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the **Kerberos Auth** dialog box, enter the following information:
 
    +----------------------+-------------------------------------+
-   | AAA Server:          | ``/Common/apm-krb-aaa`` (drop down) |
+   | AAA Server:          | ``/Common/Kerberos_SSL`` (drop down)|
    +----------------------+-------------------------------------+
    | Request Based Auth:  | ``Disabled`` (drop down)            |
    +----------------------+-------------------------------------+
 
 #. Click the **Save** button at the bottom of the dialog box
 
-   |image77|
-
-   .. NOTE:: The *apm-krb-aaa* object was pre-created for you in this lab.
-      More details on the configuration of Kerberos AAA are included in
-      the Learn More section at the end of this guide.
+   |image077|
 
 #. In the **Visual Policy Editor** window for
-   ``/Common/idp.f5demo.com‑policy``, click the **Plus (+) Sign** on the
+   ``/Common/idp.acme.com‑policy``, click the **Plus (+) Sign** on the
    **Successful** branch between **Kerberos Auth** and **Deny**
 
    |image78|
@@ -311,6 +307,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image107| image:: media/Lab3/image107.png
 .. |image116| image:: media/Lab3/image116.png
 .. |image075| image:: media/lab3/image074.png
+.. |image077| image:: media/lab3/image076.png
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
 .. |image72| image:: media/lab3/image71.png
