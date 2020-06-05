@@ -176,7 +176,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the pop-up dialog box, select the **Authentication** tab and then
    select the **Radio** next to **AD Query**, and click the **Add Item** button
 
-   |image79|
+   |image78|
 
 #. In the resulting **AD Query(1)** pop-up window, select
    ``/Commmon/f5demo_ad`` from the **Server** drop down menu
@@ -184,7 +184,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the **SearchFilter** field, enter the following value:
    ``userPrincipalName=%{session.logon.last.username}``
 
-   |image80|
+   |image79|
 
 #. In the **AD Query(1)** window, click the **Branch Rules** tab
 
@@ -192,7 +192,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 
 #. Click the **Change** link next to the **Expression**
 
-   |image81|
+   |image80|
 
 #. In the resulting pop-up window, delete the existing expression by clicking
    the **X** as shown
