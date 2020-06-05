@@ -203,10 +203,10 @@ TASK 3: Configure, Modify, and test a new Access Profile
 
 11. On the Successful Branch set ending to **Allow**
 
-.. image:: media/image109.png
+.. image:: media/Lab3/image109.png
    :width: 1.55in
    :height: 0.76in
-   
+
 #. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
 
 #. Click on the **SAML Auth** radio button and click on Add item
