@@ -48,7 +48,7 @@ AD User and Keytab
 
    |image100|
 
-#. Open a command prompt on the jumphost.  Change directory to C:\\User\\User1  **cd c:\\user\\user1**
+#. Open a command prompt on the jumphost.  Change directory to C:\\Users\\User1  **cd c:\\users\\user1**
 
 #. From the Windows command line, run the KTPASS command to generate a keytab
    file for the previously created user object
