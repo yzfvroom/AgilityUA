@@ -225,8 +225,8 @@ TASK 3: Configure, Modify, and test a new Access Profile
 
 
 .. image:: media/Lab3/SAML_Auth.png
-   :width: 4.06in
-   :height: 3.08in
+   :width: 4.09in
+   :height: 1.48in
 
 
 #. Click Save
