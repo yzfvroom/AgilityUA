@@ -80,8 +80,19 @@ AD User and Keytab
 Kerberos AAA Object
 ~~~~~~~~~~~~~~~~~~~
 
-#. Create the AAA object by navigating to **Access ‑> Authentication ->
-   Kerberos**
+#. Return to your BIG-IP1
+
+#. Create the AAA object by navigating to **Access ‑> Authentication -> Kerberos**
+
+  |image106|
+
+    +--------------------+---------------------------------+
+    | Name:              | ``Kerbos_SSL``                  |
+    +--------------------+---------------------------------+
+    | Auth Realm:        | ``F5LAB.LOCAL``                 |
+    +--------------------+---------------------------------+
+    | Service Name:      | ``HTTP``                        |
+    +--------------------+---------------------------------+
 
 #. Specify a **Name**
 
@@ -89,11 +100,11 @@ Kerberos AAA Object
 
 #. Specify a **Service Name** (This should be *HTTP* for http/https services)
 
-#. Browse to locate the **Keytab File**
+#. Browse to locate the **Keytab File** **c:\\user\\user1\\file2.keytab**
 
 #. Click **Finished** to complete creation of the AAA object
 
-   |image115|
+   |image113|
 
 #. Review the AAA server configuration at **Access ‑> Authentication**
 
@@ -301,7 +312,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image101| image:: media/Lab3/image101.png
 .. |image111| image:: media/Lab3/image111.png
 .. |image112| image:: media/Lab3/image112.png
-
+.. |image106| image:: media/Lab3/image106.png
+.. |image113| image:: media/Lab3/image113.png  
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
