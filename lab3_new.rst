@@ -257,17 +257,20 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. In the **Visual Policy Editor**, select the **Deny** ending on the
    fallback branch following **Advanced Resource Assign**
 
-   |image091|
-
 #. In the **Select Ending** dialog box, selet the **Allow** radio button
    and then click **Save**
 
-   |image92|
+   |image091|
 
 #. In the **Visual Policy Editor**, click **Apply Access Policy**
    (top left), and close the **Visual Policy Editor**
 
-   |image93|
+   |image092|
+
+#. Click **Local Traffic -> Virtual Servers -> Virtual Servers List** select
+   the ''idp.acme.com'' Virtual Server
+
+   |image093|
 
 TASK 2 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -278,7 +281,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
    Explorer has been configured and will be used.
 
 #. Using Internet Explorer from the jump host, navigate to the SAML IdP you
-   previously configured at *https://idp.f5demo.com* (or click the
+   previously configured at *https://idp.acme.com* (or click the
    provided bookmark)
 
    |image94|
@@ -319,6 +322,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image089| image:: media/Lab3/image089.png
 .. |image090| image:: media/Lab3/image090.png
 .. |image091| image:: media/Lab3/image091.png
+.. |image092| image:: media/Lab3/image092.png
+.. |image093| image:: media/Lab3/image093.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
