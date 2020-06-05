@@ -114,11 +114,20 @@ Kerberos AAA Object
 TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Using the existing Access Policy from Lab 2, navigate to **Access ‑>
-   Profiles/Policies ‑> Access Profiles (Per-Session Policies)**, and click
-   the **Edit** link next to the previously created *idp.f5demo.com-policy*
+#. Navigate to **Access ‑> Profiles/Policies ‑> Access Profiles (Per-Session Policies)**, and click
+   the **Copy** link next to the existing *idp.acme.com-policy*
 
-   |image70|
+   |image114|
+
+#. Give it a name **idp.acme.com-kerberos**
+
+#. Click on **Edit** for this new policy
+
+#. Click the + between Start and Logon page
+
+#. Choose **HTTP 401 Response** radio button and click **Add item**
+
+   |image107|
 
 #. Delete the **Logon Page** object by clicking on the **X** as shown
 
@@ -314,6 +323,8 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image112| image:: media/Lab3/image112.png
 .. |image106| image:: media/Lab3/image106.png
 .. |image113| image:: media/Lab3/image113.png
+.. |image114| image:: media/Lab3/image114.png
+.. |image107| image:: media/Lab3/image107.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
