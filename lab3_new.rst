@@ -246,7 +246,7 @@ TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
 #. Click the **Webtop** tab, and select the **Checkbox** next to
    ``/Common/full_webtop``
 
-   |image90|
+   |image090|
 
 #. Click the **Update** button at the bottom of the window to complete
    the Resource Assignment entry
@@ -317,6 +317,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image087| image:: media/Lab3/image087.png
 .. |image088| image:: media/Lab3/image088.png
 .. |image089| image:: media/Lab3/image089.png
+.. |image090| image:: media/Lab3/image090.png
 
 .. |image70| image:: media/lab3/image44.png
 .. |image71| image:: media/lab3/image70.png
