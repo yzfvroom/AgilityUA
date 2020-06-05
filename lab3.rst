@@ -32,235 +32,302 @@ Lab Requirements:
 
 Estimated completion time: 15 minutes
 
-TASK 1: Create an SSO object and Webtop Resource
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1: Kerberos AAA Object
+==============================
 
-______________________________________________________________
+AD User and Keytab
+~~~~~~~~~~~~~~~~~~
 
-SAML Resource
+#. Create a new user in Active Directory
 
-1.  Begin by selecting Access > Federation > SAML Resources
+#. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
 
+   |image105|
 
-1.  Click the Create button (far right)
+#. Create the User Logon Name *kerberos*, click **Next**
 
+   |image100|
 
-3.  In the New SAML Resource window, enter the following values:
+#. Open a command prompt on the jumphost.  Change directory to C:\User\User1  **cd c:\user\user1**
 
-    +--------------------+---------------------------------+
-    | Name:              | ``parnter-app``                 |
-    +--------------------+---------------------------------+
-    | SSO Configuration: | ``idp.acme.com``                |
-    +--------------------+---------------------------------+
-    | Caption:           | ``parnter-app``                 |
-    +--------------------+---------------------------------+
+#. From the Windows command line, run the KTPASS command to generate a keytab
+   file for the previously created user object
 
-.. image:: media/Lab3/image001.png
-   :width: 4.06in
-   :height: 3.08in
+   ``ktpass -princ HTTP/idp.acme.com@F5LAB.LOCAL -mapuser f5lab\kerberos crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass password -out file2.keytab``
 
-Click Finished at the bottom of the configuration window
+   +-------------------------+-----------------------+
+   | FQDN of virtual server: | ``idp.acme.com``      |
+   +-------------------------+-----------------------+
+   | AD Domain (UPN format): | ``@F5LAB.LOCAL``      |
+   +-------------------------+-----------------------+
+   | Username:               | ``f5lab\kerberos``    |
+   +-------------------------+-----------------------+
+   | Password:               | ``password``          |
+   +-------------------------+-----------------------+
 
-**Create Webtop**
+#. Review the changes to the AD User object
 
-4.	Select Access > Webtops > Webtop List
+   |image101|
 
-5.	Click Create button (far right)
+#. Under **Account options** scroll until you find **This account supports Kerberos AES 256 bit encryption** check the box, click OK
 
-6.	In the resulting window, enter the following values
+   |image111|
 
-  +--------------------+---------------------------------+
-  | Name:              | ``full_webtop``                 |
-  +--------------------+---------------------------------+
-  | Type:              | ``Full`` (drop down)            |
-  +--------------------+---------------------------------+
+#. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service** Selected
 
-7. Click finished at the bottom of the GUI
+   |image112|
 
-.. image:: media/Lab3/image002.jpg
-   :width: 4.06in
-   :height: 3.08in
+Kerberos AAA Object
+~~~~~~~~~~~~~~~~~~~
 
+#. Return to your BIG-IP1
 
-TASK 2 – Configure an Active Directory account, Kerberos AAA Object, and keytab file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Create the AAA object by navigating to **Access ‑> Authentication -> Kerberos**
 
-1. From the Jumphost click **Windows Menu -> Administrative Tools -> Active Directory Users and Computers**
-
-.. image:: media/Lab3/image105.png
-   :width: 3.31
-   :height: 3.55
-
-2. From the File menu click on **Action -> New -> User**
-
-3. Create a new Active Directory User Account with the follow attributes:
-
-  +--------------------+---------------------------------+
-  | First Name:        | ``Kerb``                        |
-  +--------------------+---------------------------------+
-  | Last Name:         | ``Eros``                        |
-  +--------------------+---------------------------------+
-  | User logon Name:   | ``kerberos``                    |
-  +--------------------+---------------------------------+
-  | Password:          | ``password``                    |
-  +--------------------+---------------------------------+
-
-
-4. The Active Directory account should be name "kerberos".
-
-.. image:: media/Lab3/image100.png
-   :width: 4.06in
-   :height: 3.08in
-
-
-.. image:: media/Lab3/image101.png
-   :width: 4.06in
-   :height: 3.08in
-
-5. The next step is the run the ktpass command from the Windows command line as follows below
-
-
-        ``ktpass -princ HTTP/kerberos.f5lab.local@f5lab.local -mapuser f5lab\kerberos crypto AES256-SHA1 -ptype KRB5_NT_PRINCIPAL -pass password -out file2.keytab``
-
-6. Click on the delegation tab of the new Active Directory User Account and ensure the **Trust this user for delegation to any service** selected
-
-
-.. image:: media/Lab3/kerbuser_delegation.png
-   :width: 4.06in
-   :height: 3.08in
-
-7. Return to the BIG-IP
-
-8. Create the Kerberos AAA object by navigating to **Access -> Authentication -> Kerberos**
-
-        +----------------------------------------------------------------------+
-        |.. image:: media/Lab3/image106.png                                    |
-        |   :width: 5.94in                                                     |
-        |   :height: 3.33in                                                    |
-        +----------------------------------------------------------------------+
-
-        +--------------------+---------------------------------+
-        | Name:              | ``Kerbos_SSL``                  |
-        +--------------------+---------------------------------+
-        | Auth Realm:        | ``F5LAB.LOCAL``                 |
-        +--------------------+---------------------------------+
-        | Service Name:      | ``HTTP``                        |
-        +--------------------+---------------------------------+
-
-9. Click the **Choose File** button and browse to locate the Keytab file in C:\\User\\User1\\file2.keytab
-
-
-10. Click Finished to complete the creation of the AAA object
-
-
-
-TASK 3: Configure, Modify, and test a new Access Profile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-1. Navigate to **Access -> Profiles ->Per-Session Profiles** and create a new Per-Session Access Profile called **Kerb_SAML**
+    |image106|
 
     +--------------------+---------------------------------+
-    | Name:              | ``Kerb_SAML``                   |
+    | Name:              | ``Kerbos_SSL``                  |
     +--------------------+---------------------------------+
-    | Profile Type:      | ``All``                         |
+    | Auth Realm:        | ``F5LAB.LOCAL``                 |
     +--------------------+---------------------------------+
-    | Languages:         | ``English``                     |
+    | Service Name:      | ``HTTP``                        |
     +--------------------+---------------------------------+
 
+#. Specify a **Name**
 
-2. Edit the new Access Profile with the following settings:
+#. Specify the **Auth Realm** (Ad Domain)
 
-3. Click on the + sign between Start and Deny
+#. Specify a **Service Name** (This should be *HTTP* for http/https services)
 
-4. From the Logon Tab click the radio button next to HTTP 401 Response and click Add Item.
+#. Browse to locate the **Keytab File** **c:\\user\\user1\\file2.keytab**
 
-.. image:: media/Lab3/image107.png
-   :width: 3.76in
-   :height: 1.55in
+#. Click **Finished** to complete creation of the AAA object
 
-5. In the **HTTP 401 Response** dialog box, enter the following information:
+   |image113|
+
+#. Review the AAA server configuration at **Access ‑> Authentication**
+
+
+
+
+TASK 1 – Modify the SAML Identity Provider (IdP) Access Policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Navigate to **Access ‑> Profiles/Policies ‑> Access Profiles (Per-Session Policies)**, and click
+   the **Copy** link next to the existing *idp.acme.com-policy*
+
+   |image114|
+
+#. Give it a name **idp.acme.com-kerberos**
+
+#. Click on **Edit** for this new policy
+
+#. Click the + between Start and Logon page
+
+#. Choose **HTTP 401 Response** radio button and click **Add item**
+
+   |image107|
+
+#. In the **HTTP 401 Response** dialog box, enter the following information and click Save:
 
    +-------------------+---------------------------------+
-   | Basic Auth Realm: | ``f5lab.local``                 |
+   | Basic Auth Realm: | ``f5demo.com``                  |
    +-------------------+---------------------------------+
    | HTTP Auth Level:  | ``basic+negotiate`` (drop down) |
    +-------------------+---------------------------------+
 
-6. Click the **Save** button at the bottom of the dialog box
+   |image116|
 
-7. Click on the + sign to the top right of the HTTP 401 Response that specifies **Basic**
+#. Delete the **Logon Page** object by clicking on the **X**
 
-8. Click on the Authentication tab, select the AD Auth object by clicking the radio button and click Add Item
+#. In the resulting **Item Deletion Confirmation** dialog, ensure that the
+   previous node is connect to the **acme.com** branch, and click the
+   **Delete** button
 
-.. image:: media/Lab3/image108.png
-   :width: 3.764in
-   :height: 1.6in
+#. In the **Visual Policy Editor** window for ``/Common/idp.acme.com‑kerberos``,
+   click the **Plus (+) Sign** on the **Negotiate** branch between
+   **HTTP 401 Response** and **Deny**
 
-9. On the AD Auth object select the /Common/AD_Server object under the Server drop down menu
+#. In the pop-up dialog box, select the **Authentication** tab and then
+   select the **Radio** next to **Kerberos Auth**, and click the
+   **Add Item** button
 
-10. Click on Save
+   |image075|
 
-11. On the Successful Branch set ending to **Allow**
+#. In the **Kerberos Auth** dialog box, enter the following information:
 
-.. image:: media/Lab3/image109.png
-   :width: 3.9in
-   :height: 0.92in
+   +----------------------+-------------------------------------+
+   | AAA Server:          | ``/Common/Kerberos_SSL`` (drop down)|
+   +----------------------+-------------------------------------+
+   | Request Based Auth:  | ``Disabled`` (drop down)            |
+   +----------------------+-------------------------------------+
 
-12. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
+#. Click the **Save** button at the bottom of the dialog box
 
-13. Click on the Authentication and choose SAML Auth radio button, click Add item
+   |image076|
 
-.. image:: media/Lab3/image110.png
-   :width: 3.77in
-   :height: 0.82in
+#. In the **Visual Policy Editor** window for
+   ``/Common/idp.acme.com‑policy``, click the **Plus (+) Sign** on the
+   **Successful** branch between **Kerberos Auth** and **Deny**
 
-#. Click on the **SAML Auth** radio button and click on Add item
+   |image077|
 
-#. Click on the SAML Auth object and select the /Common/app.acme.com object next to the AAA Server section
+#. In the pop-up dialog box, select the **Authentication** tab and then
+   select the **Radio** next to **AD Query**, and click the **Add Item** button
 
-#. Click on the Branch Rules tab
+   |image078|
 
-#. Name the Branch **Successful**, and ensure the Expression is set to **SAML Auth has Passed**
+#. In the resulting **AD Query(1)** pop-up window, select
+   ``/Commmon/AD_Server`` from the **Server** drop down menu
 
+#. In the **SearchFilter** field, enter the following value:
+   ``userPrincipalName=%{session.logon.last.username}``
 
-.. image:: media/Lab3/SAML_Auth.png
-   :width: 4.09in
-   :height: 1.48in
+   |image079|
 
+#. In the **AD Query(1)** window, click the **Branch Rules** tab
 
-#. Click Save
+#. Change the **Name** of the branch to *Successful*.
 
-#. On the Successful branch of the SAML Auth object modify the setting to Allow
+#. Click the **Change** link next to the **Expression**
 
-#. Click on Apply Policy
+   |image080|
 
+#. In the resulting pop-up window, delete the existing expression by clicking
+   the **X** as shown
 
-.. image:: media/Lab3/final_access_policy.png
-   :width: 4.06in
-   :height: 3.08in
+   |image082|
 
+#. Create a new **Simple** expression by clicking the **Add Expression** button
 
-#. The final step in this lab is the Access Policy to the app.acme.com Virtual Server
+   |image080|
 
-#. Within the GUI navigate to Local Traffic, Virtual Servers, and click on the app.acme.com Virtual Server
+#. In the resulting menu, select the following from the drop down menus:
 
-#. Scroll down to the Access Policy section and select your new Access Policy and click the update button at the bottom of the page.
+   +------------+---------------------+
+   | Agent Sel: | ``AD Query``        |
+   +------------+---------------------+
+   | Condition: | ``AD Query Passed`` |
+   +------------+---------------------+
 
+#. Click the **Add Expression** Button
 
-TASK 4 - Test the Kerberos to SAML Configuration
+   |image084|
+
+#. Click the **Finished** button to complete the expression
+
+   |image081|
+
+#. Click the **Save** button to complete the **AD Query**
+
+#. In the **Visual Policy Editor** window for ``/Common/idp.acme.com‑policy``,
+   click the **Plus (+) Sign** on the **Successful** branch between
+   **AD Query(1)** and **Deny**
+
+#. In the pop-up dialog box, select the **Assignment** tab and then select
+   the **Radio** next to **Advanced Resource Assign**, and click the
+   **Add Item** button
+
+   |image087|
+
+#. In the resulting **Advanced Resource Assign(1)** pop-up window, click
+   the **Add New Entry** button
+
+#. In the new Resource Assignment entry, click the **Add/Delete** link
+
+   |image088|
+
+#. In the resulting pop-up window, click the **SAML** tab, and select the
+   **Checkbox** next to */Common/app.acme.com*
+
+   |image089|
+
+#. Click the **Webtop** tab, and select the **Checkbox** next to
+   ``/Common/full_webtop``
+
+   |image090|
+
+#. Click the **Update** button at the bottom of the window to complete
+   the Resource Assignment entry
+
+#. Click the **Save** button at the bottom of the
+   **Advanced Resource Assign** window
+
+#. In the **Visual Policy Editor**, select the **Deny** ending on the
+   fallback branch following **Advanced Resource Assign**
+
+#. In the **Select Ending** dialog box, selet the **Allow** radio button
+   and then click **Save**
+
+   |image091|
+
+#. In the **Visual Policy Editor**, click **Apply Access Policy**
+   (top left), and close the **Visual Policy Editor**
+
+   |image092|
+
+#. Click **Local Traffic -> Virtual Servers -> Virtual Servers List** select
+   the ''idp.acme.com'' Virtual Server
+
+   |image093|
+
+#. Scroll down to **Access Policy** and select the ''idp.acme.com-kerberos''
+   policy from the drop down. Scroll to the down and click Update
+
+   |image094|
+
+TASK 2 - Test the Kerberos to SAML Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-______________________________________________________________
 
 .. NOTE:: In the following Lab Task it is recommended that you use Microsoft
    Internet Explorer.  While other browsers also support Kerberos
    (if configured), for the purposes of this Lab Microsoft Internet
    Explorer has been configured and will be used.
 
-#. Using Internet Explorer on the jump host type in https://app.acme.com
+#. Using Internet Explorer from the jump host, navigate to the SAML IdP you
+   previously configured at *https://idp.acme.com*
+
+   |image095|
 
 #. Were you prompted for credentials? Were you successfully authenticated?
+   Did you see the webtop with the SP application?
+
+#. Click on the app.acme.com icon. Were you successfully authenticated
+   (via SAML) to the SP?
 
 #. Review your Active Sessions **(Access ‑> Overview ‑> Active Sessions­­­)**
 
 #. Review your Access Report Logs **(Access ‑> Overview ‑> Access Reports)**
+
+
+.. |image105| image:: media/Lab3/image105.png
+.. |image100| image:: media/Lab3/image100.png
+.. |image101| image:: media/Lab3/image101.png
+.. |image111| image:: media/Lab3/image111.png
+.. |image112| image:: media/Lab3/image112.png
+.. |image106| image:: media/Lab3/image106.png
+.. |image113| image:: media/Lab3/image113.png
+.. |image114| image:: media/Lab3/image114.png
+.. |image107| image:: media/Lab3/image107.png
+.. |image116| image:: media/Lab3/image116.png
+.. |image075| image:: media/Lab3/image075.png
+.. |image076| image:: media/Lab3/image076.png
+.. |image077| image:: media/Lab3/image077.png
+.. |image078| image:: media/Lab3/image078.png
+.. |image079| image:: media/Lab3/image079.png
+.. |image080| image:: media/Lab3/image080.png
+.. |image082| image:: media/Lab3/image082.png
+.. |image080| image:: media/Lab3/image080.png
+.. |image084| image:: media/Lab3/image084.png
+.. |image081| image:: media/Lab3/image081.png
+.. |image087| image:: media/Lab3/image087.png
+.. |image088| image:: media/Lab3/image088.png
+.. |image089| image:: media/Lab3/image089.png
+.. |image090| image:: media/Lab3/image090.png
+.. |image091| image:: media/Lab3/image091.png
+.. |image092| image:: media/Lab3/image092.png
+.. |image093| image:: media/Lab3/image093.png
+.. |image093| image:: media/Lab3/image093.png
+.. |image094| image:: media/Lab3/image094.png
+.. |image095| image:: media/Lab3/image095.png
