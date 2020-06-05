@@ -189,21 +189,24 @@ TASK 3: Configure, Modify, and test a new Access Profile
 
 6. Click the **Save** button at the bottom of the dialog box
 
-#. Click on the + sign to the top right of the HTTP 401 Response that specifies **Basic**
+7. Click on the + sign to the top right of the HTTP 401 Response that specifies **Basic**
 
-#. Click on the Authentication tab, select the AD Auth object by clicking the radio button and click Add Item
+8. Click on the Authentication tab, select the AD Auth object by clicking the radio button and click Add Item
 
 .. image:: media/Lab3/image108.png
    :width: 3.764in
    :height: 1.6in
 
+9. On the AD Auth object select the /Common/AD_Server object under the Server drop down menu
 
-#. Click on the AD Auth object and select the /Common/AD_Server object under the Server drop down menu
+10. Click on Save
 
-#. Click on Save
+11. On the Successful Branch set ending to **Allow**
 
-#. Change the Successful Branch to Allow
-
+.. image:: media/image109.png
+   :width: 1.55in
+   :height: 0.76in
+   
 #. Click on the + to the right of the **Negotiate** branch of the HTTP 401 Response object
 
 #. Click on the **SAML Auth** radio button and click on Add item
