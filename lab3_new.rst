@@ -69,6 +69,10 @@ AD User and Keytab
 
    |image101|
 
+#. Under **Account options** scroll until you find **This account supports Kerberos AES 256 bit encryption** check the box, click OK
+
+   |image111|
+
 Kerberos AAA Object
 ~~~~~~~~~~~~~~~~~~~
 
@@ -291,6 +295,7 @@ TASK 2 - Test the Kerberos to SAML Configuration
 .. |image105| image:: media/Lab3/image105.png
 .. |image100| image:: media/Lab3/image100.png
 .. |image101| image:: media/Lab3/image101.png
+.. |image111| image:: media/Lab3/image101.png
 .. |image70| image:: /_static/class1/image44.png
 .. |image71| image:: /_static/class1/image70.png
 .. |image72| image:: /_static/class1/image71.png
